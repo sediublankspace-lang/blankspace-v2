@@ -1,30 +1,35 @@
 ---
 const partners = [
   { name: "FABRICATOR", style: "font-black tracking-widest text-lg" },
-  { name: "Univ. de Arhitectură & Design", style: "font-serif italic text-sm font-semibold tracking-tight" },
-  { name: "STUDIO DESIGN", style: "font-light tracking-loose text-md" },
+  { name: "Univ. Arhitectură & Design", style: "font-serif italic text-sm font-semibold tracking-tight" },
+  { name: "STUDIO DESIGN", style: "font-light tracking-loose text-base" },
   { name: "PROTO LAB", style: "font-mono font-bold text-base" },
-  { name: "ECDL Romania", style: "font-sans font-bold tracking-tight text-md" }
+  { name: "ECDL Romania", style: "font-sans font-bold tracking-tight text-base" }
 ];
 ---
 
-<section class="relative py-16 md:py-20 bg-background">
+<section class="relative py-14 md:py-20" style="background: #FAFAF8; border-top: 1px solid #D9D6D1;">
   <div class="mx-auto max-w-7xl px-6">
-    <div class="text-center mb-10 md:mb-12">
-      <p class="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+
+    <div class="text-center mb-10">
+      <p class="text-[10px] font-semibold tracking-[0.22em] uppercase" style="color: #AAA39A;">
         Parteneri educaționali și tehnologici
       </p>
     </div>
-    
-    {/* Partners Logo Row */}
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center opacity-50 dark:opacity-40">
-      {partners.map((p) => (
+
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
+      {partners.map((p, idx) => (
         <div
-          class={`text-muted-foreground hover:text-foreground transition-all duration-300 select-none cursor-default py-2 hover:opacity-100 ${p.style}`}
+          id={`partner-${idx}`}
+          class={`select-none cursor-default py-2 transition-all duration-400 ${p.style}`}
+          style="color: #BEBAB3; opacity: 0.5;"
+          onmouseover="this.style.color='#B8A22A'; this.style.opacity='1';"
+          onmouseout="this.style.color='#BEBAB3'; this.style.opacity='0.5';"
         >
           {p.name}
         </div>
       ))}
     </div>
+
   </div>
 </section>

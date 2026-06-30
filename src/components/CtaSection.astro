@@ -1,47 +1,65 @@
 ---
 ---
 
-<section class="relative py-24 md:py-32 bg-background overflow-hidden border-t border-border/40">
-  {/* Glow background */}
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[600px] h-[300px] bg-brand/5 rounded-full blur-[100px] pointer-events-none"></div>
+<section class="relative py-24 md:py-32 overflow-hidden" style="background: #111111; border-top: 1px solid rgba(255,255,255,0.05);">
 
-  <div class="mx-auto max-w-5xl px-6">
-    <div class="relative rounded-3xl border border-border/50 bg-muted/20 px-8 py-12 md:py-16 md:px-16 text-center shadow-2xl shadow-brand/[0.01] overflow-hidden">
-      
-      {/* Decorative subtle top line in brand color */}
-      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand to-transparent"></div>
+  {/* Ambient golden glow — centered */}
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[700px] h-[350px] rounded-full blur-[130px] pointer-events-none opacity-[0.12]"
+       style="background: #B8A22A;"></div>
 
-      <div class="max-w-2xl mx-auto space-y-6">
-        <span class="inline-block text-xs font-semibold tracking-wider text-brand uppercase">
-          Alătură-te comunității
-        </span>
-        
-        <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-foreground text-balance leading-tight">
-          Ideea ta merită un spațiu de lucru. Hai să o construim împreună.
-        </h2>
-        
-        <p class="text-base md:text-lg text-muted-foreground leading-relaxed">
-          Locurile pentru cursurile practice de vară sunt limitate pentru a asigura un raport optim de 1 la 1 cu mentorii. Rezervă-ți locul acum și vino să experimentezi în laboratorul digital.
-        </p>
+  {/* Top golden accent line */}
+  <div class="absolute top-0 left-0 right-0 h-[2px]" style="background: linear-gradient(90deg, transparent, #B8A22A 40%, #C9B091 60%, transparent);"></div>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-          <a
-            href="/contact"
-            class="inline-flex w-full sm:w-auto h-11 items-center justify-center rounded-lg bg-brand px-6 font-medium text-white hover:bg-brand/90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md shadow-brand/20 group/btn cursor-pointer"
-          >
-            Înscrie-te la cursuri
-            <svg class="ml-1.5 size-4 group-hover/btn:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </a>
-          <a
-            href="/contact"
-            class="inline-flex w-full sm:w-auto h-11 items-center justify-center rounded-lg border border-border/60 bg-background/50 hover:bg-muted/60 backdrop-blur-sm px-6 font-medium text-foreground hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
-          >
-            Adresează o întrebare
-          </a>
-        </div>
-      </div>
+  <div class="mx-auto max-w-4xl px-6 text-center">
+
+    {/* Eyebrow */}
+    <div class="flex items-center justify-center gap-3 mb-7">
+      <span class="inline-block w-6 h-[2px]" style="background: rgba(184,162,42,0.5);"></span>
+      <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color: #B8A22A;">
+        Alătură-te comunității
+      </span>
+      <span class="inline-block w-6 h-[2px]" style="background: rgba(184,162,42,0.5);"></span>
     </div>
+
+    {/* Headline */}
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.07] mb-6" style="color: #F4F4F4; font-family: 'Playfair Display', Georgia, serif;">
+      Găsește-ți<br />
+      <span style="color: #B8A22A;">BlankSpace-ul.</span>
+    </h2>
+
+    {/* Body */}
+    <p class="text-base md:text-lg leading-relaxed mb-10 max-w-2xl mx-auto" style="color: #6A6A6A;">
+      Alege un curs, vino în laborator sau spune-ne ce vrei să dezvolți. Locurile pentru cursurile practice sunt limitate pentru a asigura un raport optim cu mentorii.
+    </p>
+
+    {/* CTA Buttons */}
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href="/contact"
+        id="cta-primary-btn"
+        class="inline-flex w-full sm:w-auto h-12 items-center justify-center rounded-lg px-8 font-semibold text-sm transition-all hover:scale-[1.02] active:scale-[0.98] group/btn"
+        style="background: #B8A22A; color: #111111; box-shadow: 0 6px 30px rgba(184,162,42,0.32);"
+      >
+        Înscrie-te
+        <svg class="ml-2 size-4 group-hover/btn:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+      <a
+        href="/contact"
+        id="cta-secondary-btn"
+        class="inline-flex w-full sm:w-auto h-12 items-center justify-center rounded-lg px-8 font-medium text-sm transition-all hover:scale-[1.02] active:scale-[0.98]"
+        style="border: 1px solid rgba(217,214,209,0.18); color: #D9D6D1; background: rgba(255,255,255,0.04);"
+        onmouseover="this.style.borderColor='rgba(184,162,42,0.3)'; this.style.background='rgba(184,162,42,0.04)';"
+        onmouseout="this.style.borderColor='rgba(217,214,209,0.18)'; this.style.background='rgba(255,255,255,0.04)';"
+      >
+        Adresează o întrebare
+      </a>
+    </div>
+
+    {/* Trust line */}
+    <p class="mt-10 text-xs tracking-wide" style="color: #3A3A3A;">
+      Răspundem în maxim 24 de ore · Fără comisioane de înscriere
+    </p>
   </div>
 </section>

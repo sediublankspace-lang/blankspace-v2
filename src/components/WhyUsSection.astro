@@ -1,78 +1,83 @@
 ---
+const features = [
+  {
+    title: "Practică reală, nu teorie",
+    desc: "Uită de dictări și examene memorate mecanic. Fiecare sesiune înseamnă lucru efectiv în programe de design sau configurarea echipamentelor fizice. Finalizezi cu un portofoliu real.",
+    icon: `<svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" /></svg>`
+  },
+  {
+    title: "Tehnologii actuale",
+    desc: "Lucrezi cu echipamentele și software-ul din industrie: imprimante 3D profesionale, software CAD, suite Adobe, microcontrolere și platforme de design din generația actuală.",
+    icon: `<svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>`
+  },
+  {
+    title: "Grupe mici, atenție individuală",
+    desc: "Grupele mici garantează că fiecare cursant primește atenție personalizată. Mentori activi din industrie oferă feedback profesionist, nu predare teoretică.",
+    icon: `<svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" /></svg>`
+  },
+  {
+    title: "Proiecte concrete",
+    desc: "Fiecare curs este construit în jurul unui proiect real. Testezi, greșești și construiești ceva palpabil. Cel mai bun mod de a înțelege o tehnologie.",
+    icon: `<svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" /></svg>`
+  },
+  {
+    title: "Atmosferă creativă",
+    desc: "Devii parte dintr-un hub activ format din ingineri, designeri, arhitecți și tineri pasionați. BlankSpace este un loc excelent pentru viitori colaboratori.",
+    icon: `<svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" /></svg>`
+  }
+];
 ---
 
-<section class="relative py-24 md:py-32 bg-muted/30 border-y border-border/40">
+<section class="relative py-24 md:py-32" style="background: #F4F4F4; border-top: 1px solid #D9D6D1; border-bottom: 1px solid #D9D6D1;">
   <div class="mx-auto max-w-7xl px-6">
+
     {/* Section Header */}
-    <div class="max-w-3xl mb-16 md:mb-20 text-center mx-auto">
-      <span class="inline-block text-xs font-semibold tracking-wider text-brand uppercase mb-3">
-        Diferența BlankSpace
-      </span>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-foreground text-balance">
+    <div class="max-w-3xl mb-16 md:mb-20 mx-auto text-center">
+      <div class="flex items-center justify-center gap-3 mb-5">
+        <span class="inline-block w-6 h-[2px]" style="background: #B8A22A;"></span>
+        <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color: #B8A22A;">
+          Diferența BlankSpace
+        </span>
+        <span class="inline-block w-6 h-[2px]" style="background: #B8A22A;"></span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-balance" style="color: #111111; font-family: 'Playfair Display', Georgia, serif;">
         De ce să înveți și să creezi alături de noi
       </h2>
-      <p class="mt-4 text-base md:text-lg text-muted-foreground">
+      <p class="mt-4 text-base md:text-lg leading-relaxed" style="color: #5A5A5A;">
         Am înlocuit predarea teoretică rigidă cu un mediu dinamic, unde accentul este pus exclusiv pe ceea ce poți realiza cu mâinile tale.
       </p>
     </div>
 
-    {/* Feature Grid - Linear/Stripe inspired dividers */}
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-border/40 overflow-hidden rounded-2xl border border-border/40">
-      
-      {/* Feature 1 */}
-      <div class="bg-background p-8 lg:p-12 space-y-4 hover:bg-muted/10 transition-colors duration-300">
-        <div class="size-10 rounded-lg bg-brand/5 border border-brand/10 flex items-center justify-center">
-          <svg class="size-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a6 6 0 100-12 6 6 0 000 12z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M22 22l-4.35-4.35" />
-          </svg>
-        </div>
-        <h3 class="text-lg font-semibold text-foreground">Învățare pur practică (Hands-on)</h3>
-        <p class="text-sm text-muted-foreground leading-relaxed">
-          Uită de dictări și examene memorate mecanic. Fiecare sesiune înseamnă lucru efectiv în programe de design sau configurarea echipamentelor fizice. Finalizezi fiecare curs cu un portofoliu de proiecte gata de arătat.
-        </p>
-      </div>
+    {/* Feature grid — 3 col, last row centered */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map((feat, idx) => (
+        <div
+          id={`why-card-${idx}`}
+          class="why-card group rounded-2xl p-7 space-y-4 transition-all duration-300"
+          style="background: #FFFFFF; border: 1px solid #D9D6D1;"
+          onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.07)'; this.style.borderColor='rgba(184,162,42,0.3)';"
+          onmouseout="this.style.boxShadow='none'; this.style.borderColor='#D9D6D1';"
+        >
+          {/* Icon */}
+          <div class="size-11 rounded-xl flex items-center justify-center"
+               style="background: rgba(184,162,42,0.07); border: 1px solid rgba(184,162,42,0.16); color: #B8A22A;"
+               set:html={feat.icon}>
+          </div>
 
-      {/* Feature 2 */}
-      <div class="bg-background p-8 lg:p-12 space-y-4 hover:bg-muted/10 transition-colors duration-300">
-        <div class="size-10 rounded-lg bg-brand/5 border border-brand/10 flex items-center justify-center">
-          <svg class="size-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719" />
-          </svg>
-        </div>
-        <h3 class="text-lg font-semibold text-foreground">Mentori din industrie</h3>
-        <p class="text-sm text-muted-foreground leading-relaxed">
-          Vei fi ghidat de designeri de produs, arhitecți și ingineri activi, care cunosc tendințele pieței, standardele de producție și provocările tehnice reale. Primești feedback profesionist de la oameni de teren.
-        </p>
-      </div>
+          {/* Number accent */}
+          <div class="flex items-center gap-3">
+            <span class="text-[10px] font-bold tracking-[0.15em] uppercase tabular-nums"
+                  style="color: rgba(184,162,42,0.5);">
+              0{idx + 1}
+            </span>
+            <span class="h-px flex-grow" style="background: rgba(184,162,42,0.12);"></span>
+          </div>
 
-      {/* Feature 3 */}
-      <div class="bg-background p-8 lg:p-12 space-y-4 hover:bg-muted/10 transition-colors duration-300">
-        <div class="size-10 rounded-lg bg-brand/5 border border-brand/10 flex items-center justify-center">
-          <svg class="size-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774a1.125 1.125 0 01.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738a1.125 1.125 0 01-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.78-.93-.398-.164-.855-.142-1.204.108l-.738.527a1.125 1.125 0 01-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
+          <h3 class="text-base font-semibold" style="color: #111111;">{feat.title}</h3>
+          <p class="text-sm leading-relaxed" style="color: #5A5A5A;">{feat.desc}</p>
         </div>
-        <h3 class="text-lg font-semibold text-foreground">Resurse și echipamente complete</h3>
-        <p class="text-sm text-muted-foreground leading-relaxed">
-          Nu ai nevoie de echipamente proprii. În cadrul cursurilor, îți punem la dispoziție imprimante 3D profesionale, consumabile (filamente, rășini), consumabile electronice și stații grafice pregătite de lucru.
-        </p>
-      </div>
-
-      {/* Feature 4 */}
-      <div class="bg-background p-8 lg:p-12 space-y-4 hover:bg-muted/10 transition-colors duration-300">
-        <div class="size-10 rounded-lg bg-brand/5 border border-brand/10 flex items-center justify-center">
-          <svg class="size-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719" />
-          </svg>
-        </div>
-        <h3 class="text-lg font-semibold text-foreground">Comunitate, nu doar un curs</h3>
-        <p class="text-sm text-muted-foreground leading-relaxed">
-          Devii parte dintr-un hub activ format din ingineri, designeri, arhitecți și tineri pasionați. BlankSpace este un loc excelent pentru a întâlni viitori colaboratori, a discuta idei de startup-uri sau a găsi inspirație.
-        </p>
-      </div>
-
+      ))}
     </div>
+
   </div>
 </section>

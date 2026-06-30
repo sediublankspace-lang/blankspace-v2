@@ -1,106 +1,151 @@
 ---
 ---
 
-<section class="relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-36 bg-background">
-  {/* Background patterns */}
-  <div class="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(109,93,246,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(109,93,246,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-  
-  {/* Violet glow */}
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 -z-10 w-[800px] h-[350px] bg-brand/10 rounded-full blur-[120px] opacity-70 dark:opacity-40"></div>
+<section class="relative min-h-screen flex flex-col justify-center overflow-hidden" style="background-color: #111111;">
 
-  <div class="mx-auto max-w-7xl px-6 text-center">
-    {/* Minimalist Badge */}
-    <div class="inline-flex items-center gap-1.5 rounded-full border border-brand/20 bg-brand/5 px-3 py-1 text-xs font-medium text-brand mb-6 animate-fade-in-up">
-      <span class="size-1.5 rounded-full bg-brand animate-pulse"></span>
-      Portile sunt deschise • Înscrieri sesiunea de vară 2026
-    </div>
+  {/* Deep texture overlay — subtle grain */}
+  <div class="hero-grain absolute inset-0 -z-10 opacity-[0.04]"></div>
 
-    {/* Hero Heading */}
-    <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-foreground max-w-4xl mx-auto leading-[1.1] mb-6 animate-fade-in-up delay-100">
-      Învață prin practică.<br />
-      <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand via-brand/90 to-brand/60">
-        Creează cu tehnologia.
-      </span>
-    </h1>
+  {/* Golden accent line top */}
+  <div class="absolute top-0 left-0 right-0 h-[2px]" style="background: linear-gradient(90deg, transparent 0%, #B8A22A 40%, #C9B091 60%, transparent 100%);"></div>
 
-    {/* Subtitle */}
-    <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10 animate-fade-in-up delay-200">
-      Cursuri și experiențe educaționale în design, tehnologie și competențe digitale pentru copii, adulți și organizații.
-    </p>
+  {/* Soft ambient glow — bottom left */}
+  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] -z-10 opacity-[0.06] blur-[100px] pointer-events-none rounded-full" style="background: #B8A22A;"></div>
 
-    {/* Actions */}
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
-      <a
-        href="#domenii"
-        class="inline-flex w-full sm:w-auto h-11 items-center justify-center rounded-lg bg-brand px-6 font-medium text-white hover:bg-brand/90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md shadow-brand/20 group/btn cursor-pointer"
-      >
-        Vezi cursurile
-        <svg class="ml-1.5 size-4 group-hover/btn:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-        </svg>
-      </a>
-      <a
-        href="#laborator"
-        class="inline-flex w-full sm:w-auto h-11 items-center justify-center rounded-lg border border-border/60 bg-background/50 hover:bg-muted/60 backdrop-blur-xs px-6 font-medium text-foreground hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
-      >
-        Descoperă laboratorul
-      </a>
-    </div>
+  <div class="mx-auto max-w-7xl px-6 pt-28 pb-20 md:pt-36 md:pb-28 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
-    {/* Floating Minimalist Dashboard Preview */}
-    <div class="relative mt-16 md:mt-20 rounded-2xl border border-border/40 bg-background/40 backdrop-blur-md p-2 shadow-2xl shadow-brand/5 max-w-5xl mx-auto overflow-hidden animate-fade-in-up delay-400">
-      <div class="rounded-xl border border-border/40 bg-background/80 overflow-hidden shadow-inner aspect-[16/9] md:aspect-[2.39/1] flex flex-col">
-        {/* Window controls header */}
-        <div class="h-8 border-b border-border/40 bg-muted/30 px-4 flex items-center justify-between">
-          <div class="flex items-center gap-1.5">
-            <span class="size-2.5 rounded-full bg-border"></span>
-            <span class="size-2.5 rounded-full bg-border"></span>
-            <span class="size-2.5 rounded-full bg-border"></span>
-          </div>
-          <span class="text-xs text-muted-foreground font-mono">blankspace.ro</span>
-          <div class="w-12"></div> {/* spacer */}
+      {/* ── Left Column — Text Content ── */}
+      <div class="space-y-9">
+
+        {/* Live Badge */}
+        <div class="animate-fade-in-up inline-flex items-center gap-2.5 rounded-full px-4 py-1.5"
+             style="border: 1px solid rgba(184,162,42,0.25); background: rgba(184,162,42,0.07);">
+          <span class="size-1.5 rounded-full animate-pulse" style="background:#B8A22A;"></span>
+          <span class="text-xs font-semibold tracking-[0.12em] uppercase" style="color: #B8A22A;">
+            Porțile sunt deschise · Sesiunea de vară 2026
+          </span>
         </div>
-        
-        {/* Dummy content window showing a gorgeous representation of a digital workspace */}
-        <div class="flex-1 p-6 md:p-8 flex flex-col md:flex-row gap-6 text-left items-center justify-between bg-gradient-to-br from-background via-background to-brand/5">
-          <div class="space-y-4 max-w-md">
-            <div class="inline-block rounded-md bg-brand/10 text-brand px-2 py-0.5 text-xs font-semibold">
-              Laborator deschis
-            </div>
-            <h3 class="text-xl md:text-2xl font-bold tracking-tight text-foreground">
-              De la idee digitală, la obiect fizic tangibil
-            </h3>
-            <p class="text-sm text-muted-foreground leading-relaxed">
-              O combinație rară de software de design, imprimare 3D avansată, și mentorat individual pentru a aduce proiectul tău la viață.
-            </p>
-            <div class="flex items-center gap-3 pt-2">
-              <span class="text-xs font-medium bg-muted px-2.5 py-1 rounded-md text-foreground">5 Echipamente 3D</span>
-              <span class="text-xs font-medium bg-muted px-2.5 py-1 rounded-md text-foreground">2 Săli de design</span>
-              <span class="text-xs font-medium bg-muted px-2.5 py-1 rounded-md text-foreground">Acces 24/7</span>
-            </div>
+
+        {/* Main Headline */}
+        <div class="animate-fade-in-up delay-100 space-y-2">
+          <h1 class="text-[2.6rem] md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.07]" style="color: #F4F4F4; font-family: 'Playfair Display', Georgia, serif;">
+            Discover, create<br />
+            and innovate your<br />
+            <span style="color: #B8A22A;">BlankSpace.</span>
+          </h1>
+        </div>
+
+        {/* Romanian Tagline */}
+        <p class="animate-fade-in-up delay-200 text-xl md:text-2xl font-light tracking-wide" style="color: #D9D6D1;">
+          Învață prin practică. Creează cu tehnologia.
+        </p>
+
+        {/* Subtitle */}
+        <p class="animate-fade-in-up delay-300 text-base md:text-lg leading-relaxed max-w-lg" style="color: #8A8A8A;">
+          Cursuri și experiențe educaționale în design, tehnologie și competențe digitale pentru copii, adulți și organizații.
+        </p>
+
+        {/* CTA Buttons */}
+        <div class="animate-fade-in-up delay-400 flex flex-col sm:flex-row items-start gap-4">
+          <a
+            href="#domenii"
+            id="hero-cta-primary"
+            class="inline-flex h-12 items-center justify-center rounded-lg px-7 font-semibold text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] group/btn"
+            style="background: #B8A22A; color: #111111; box-shadow: 0 4px 24px rgba(184,162,42,0.28);"
+          >
+            Vezi cursurile
+            <svg class="ml-2 size-4 group-hover/btn:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+          <a
+            href="#laborator"
+            id="hero-cta-secondary"
+            class="inline-flex h-12 items-center justify-center rounded-lg px-7 font-medium text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            style="border: 1px solid rgba(217,214,209,0.25); color: #D9D6D1; background: rgba(255,255,255,0.04);"
+          >
+            Descoperă laboratorul
+          </a>
+        </div>
+
+        {/* Trust metrics */}
+        <div class="animate-fade-in-up delay-500 flex items-center gap-8 pt-5" style="border-top: 1px solid rgba(255,255,255,0.07);">
+          <div class="text-center">
+            <div class="text-2xl font-bold tracking-tight" style="color: #B8A22A; font-family: 'Playfair Display', serif;">15+</div>
+            <div class="text-xs mt-0.5 tracking-wide" style="color: #5A5A5A;">Echipamente</div>
           </div>
-          
-          {/* High-quality technology placeholder image */}
-          <div class="relative size-48 md:size-64 rounded-xl border border-border/40 overflow-hidden shadow-lg group/visual">
-            <img 
-              src="https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&w=600&q=80" 
-              alt="Digital Workspace BlankSpace" 
-              class="absolute inset-0 size-full object-cover group-hover:scale-105 transition-transform duration-700" 
-              loading="eager"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-background/35 to-transparent"></div>
+          <div class="h-8 w-px" style="background: rgba(255,255,255,0.08);"></div>
+          <div class="text-center">
+            <div class="text-2xl font-bold tracking-tight" style="color: #B8A22A; font-family: 'Playfair Display', serif;">100%</div>
+            <div class="text-xs mt-0.5 tracking-wide" style="color: #5A5A5A;">Practică reală</div>
+          </div>
+          <div class="h-8 w-px" style="background: rgba(255,255,255,0.08);"></div>
+          <div class="text-center">
+            <div class="text-2xl font-bold tracking-tight" style="color: #B8A22A; font-family: 'Playfair Display', serif;">1:1</div>
+            <div class="text-xs mt-0.5 tracking-wide" style="color: #5A5A5A;">Mentorat</div>
           </div>
         </div>
       </div>
+
+      {/* ── Right Column — Cinematic Image ── */}
+      <div class="animate-fade-in-up delay-200 relative">
+
+        {/* Main image frame */}
+        <div class="relative rounded-2xl overflow-hidden aspect-[4/5] lg:aspect-[3/4]"
+             style="border: 1px solid rgba(184,162,42,0.12); box-shadow: 0 40px 100px rgba(0,0,0,0.65);">
+
+          <img
+            src="https://images.unsplash.com/photo-1562408590-e32931084e23?auto=format&fit=crop&w=900&q=85"
+            alt="Laborator digital BlankSpace — spațiu educațional premium de design și tehnologie"
+            class="absolute inset-0 size-full object-cover"
+            loading="eager"
+          />
+
+          {/* Cinematic gradient overlay */}
+          <div class="absolute inset-0" style="background: linear-gradient(170deg, rgba(17,17,17,0.08) 0%, rgba(17,17,17,0.0) 35%, rgba(17,17,17,0.55) 100%);"></div>
+
+          {/* Top edge subtle vignette */}
+          <div class="absolute top-0 left-0 right-0 h-20" style="background: linear-gradient(to bottom, rgba(17,17,17,0.25), transparent);"></div>
+
+          {/* Floating label — bottom */}
+          <div class="absolute bottom-5 left-5 right-5">
+            <div class="rounded-xl px-5 py-4" style="background: rgba(17,17,17,0.82); backdrop-filter: blur(14px); border: 1px solid rgba(184,162,42,0.18);">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="size-1.5 rounded-full" style="background: #B8A22A;"></span>
+                <span class="text-[10px] font-bold tracking-[0.16em] uppercase" style="color: #B8A22A;">Laborator deschis</span>
+              </div>
+              <p class="text-sm font-medium leading-snug" style="color: #F4F4F4;">De la idee digitală, la obiect fizic tangibil</p>
+            </div>
+          </div>
+
+          {/* Corner accent — top left */}
+          <div class="absolute top-0 left-0 w-12 h-[2px]" style="background: #B8A22A;"></div>
+          <div class="absolute top-0 left-0 w-[2px] h-12" style="background: #B8A22A;"></div>
+        </div>
+
+        {/* Decorative glow orb */}
+        <div class="absolute -top-6 -right-6 size-28 rounded-full -z-10 blur-3xl opacity-25"
+             style="background: #B8A22A;"></div>
+
+        {/* Secondary decorative element */}
+        <div class="absolute -bottom-4 -left-4 size-16 rounded-full -z-10 blur-2xl opacity-15"
+             style="background: #6D7E53;"></div>
+      </div>
+
     </div>
   </div>
+
+  {/* Bottom transition fade to light */}
+  <div class="absolute bottom-0 left-0 right-0 h-28 pointer-events-none"
+       style="background: linear-gradient(to top, #F4F4F4, transparent);"></div>
 </section>
 
 <style>
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(28px);
     }
     to {
       opacity: 1;
@@ -110,22 +155,19 @@
 
   .animate-fade-in-up {
     opacity: 0;
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
-  .delay-100 {
-    animation-delay: 100ms;
-  }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
 
-  .delay-200 {
-    animation-delay: 200ms;
-  }
-
-  .delay-300 {
-    animation-delay: 300ms;
-  }
-
-  .delay-400 {
-    animation-delay: 400ms;
+  /* Subtle noise texture — keeps dark section from feeling flat */
+  .hero-grain {
+    background-image:
+      url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cg fill='%23fff' fill-opacity='1'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3Ccircle cx='31' cy='31' r='1'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
   }
 </style>

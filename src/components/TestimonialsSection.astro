@@ -1,77 +1,80 @@
 ---
 const testimonials = [
   {
-    quote: "Băiatul meu de 12 ani a participat la atelierele creative. A fost fascinat să vadă cum un obiect desenat de el pe calculator este creat fizic, strat cu strat. Dincolo de joacă, a învățat noțiuni reale de geometrie în spațiu și programare.",
+    quote: "Băiatul meu de 12 ani a participat la atelierele creative. A fost fascinat să vadă cum un obiect desenat de el pe calculator este creat fizic, strat cu strat. Dincolo de joacă, a învățat noțiuni reale de geometrie în spațiu.",
     author: "Radu Vasilescu",
     role: "Părinte",
-    initials: "RV",
     photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80"
   },
   {
-    quote: "Mentorship-ul de la cursul de Design Interior mi-a schimbat parcursul profesional. Posibilitatea de a lucra direct cu softuri CAD și de a crea machete în laborator mi-a oferit încrederea și portofoliul de care aveam nevoie ca să încep pe cont propriu.",
+    quote: "Mentorship-ul de la cursul de Design Interior mi-a schimbat parcursul profesional. Posibilitatea de a lucra direct cu softuri CAD și de a crea machete în laborator mi-a oferit încrederea și portofoliul de care aveam nevoie.",
     author: "Elena Marin",
     role: "Freelance Designer (Absolventă)",
-    initials: "EM",
     photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=80"
   },
   {
-    quote: "Am organizat un workshop privat de design de produs cu echipa noastră. A fost cel mai antrenant team-building: să schițezi împreună o idee, să o printezi 3D și să o asamblezi te învață extrem de multe despre colaborare.",
+    quote: "Am organizat un workshop privat de design de produs cu echipa noastră. Cel mai antrenant team-building: să schițezi împreună o idee, să o printezi 3D și să o asamblezi te învață extrem de multe despre colaborare.",
     author: "Mihai Stan",
     role: "Director Operațional, Tech Corp",
-    initials: "MS",
     photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80"
   }
 ];
 ---
 
-<section id="testimoniale" class="relative py-24 md:py-32 bg-muted/30 border-y border-border/40">
+<section id="testimoniale" class="relative py-24 md:py-32" style="background: #F4F4F4; border-top: 1px solid #D9D6D1;">
   <div class="mx-auto max-w-7xl px-6">
-    
-    {/* Section Header */}
+
+    {/* Header */}
     <div class="max-w-3xl mb-16 md:mb-20">
-      <span class="inline-block text-xs font-semibold tracking-wider text-brand uppercase mb-3">
-        Experiențe reale
-      </span>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-block w-8 h-[2px]" style="background: #B8A22A;"></span>
+        <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color: #B8A22A;">
+          Experiențe reale
+        </span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight" style="color: #111111; font-family: 'Playfair Display', Georgia, serif;">
         Ce spun cursanții și partenerii noștri
       </h2>
-      <p class="mt-4 text-base md:text-lg text-muted-foreground">
-        Nu ne crede pe cuvânt. Iată părerile celor care au trecut pragul laboratorului nostru și au transformat conceptele teoretice în realități palpabile.
+      <p class="mt-4 text-base md:text-lg leading-relaxed" style="color: #5A5A5A;">
+        Nu ne crede pe cuvânt. Iată părerile celor care au trecut pragul laboratorului nostru.
       </p>
     </div>
 
-    {/* Testimonials Grid */}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {testimonials.map((test) => (
+    {/* Testimonial cards */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+      {testimonials.map((test, idx) => (
         <div
-          class="flex flex-col justify-between rounded-2xl border border-border/40 bg-background p-8 hover:border-brand/20 transition-all duration-300 hover:scale-[1.01]"
+          id={`testimonial-card-${idx}`}
+          class="group flex flex-col justify-between rounded-2xl p-7 transition-all duration-300"
+          style="background: #FFFFFF; border: 1px solid #D9D6D1;"
+          onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.07)'; this.style.borderColor='rgba(184,162,42,0.25)';"
+          onmouseout="this.style.boxShadow='none'; this.style.borderColor='#D9D6D1';"
         >
-          {/* Quote mark or icon */}
-          <div class="text-brand/20 mb-6">
-            <svg class="size-8 fill-current" viewBox="0 0 24 24">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.996 3.638-3.996 5.849h3.996v10h-10zm-12 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+          {/* Quotation mark — editorial style */}
+          <div class="mb-5">
+            <svg class="size-7" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 24V14.4C0 6.4 4.8 1.6 14.4 0L16 3.2C11.2 4.8 8.8 7.2 8.8 10.4H14.4V24H0ZM17.6 24V14.4C17.6 6.4 22.4 1.6 32 0L33.6 3.2C28.8 4.8 26.4 7.2 26.4 10.4H32V24H17.6Z"
+                    fill="#B8A22A" fill-opacity="0.18"/>
             </svg>
           </div>
 
-          {/* Quote text */}
-          <p class="text-base text-muted-foreground leading-relaxed italic mb-8 flex-grow">
-            „{test.quote}”
+          <p class="text-base leading-relaxed italic flex-grow mb-7" style="color: #2A2A2A;">
+            „{test.quote}"
           </p>
 
-          {/* Author footer */}
-          <div class="flex items-center gap-3 pt-6 border-t border-border/20">
-            {/* Minimal Avatar placeholder using photo */}
-            <div class="size-10 rounded-full border border-border/40 overflow-hidden shrink-0">
-              <img 
-                src={test.photo} 
-                alt={test.author} 
+          {/* Author */}
+          <div class="flex items-center gap-3 pt-5" style="border-top: 1px solid #D9D6D1;">
+            <div class="size-10 rounded-full overflow-hidden shrink-0" style="border: 2px solid rgba(184,162,42,0.3);">
+              <img
+                src={test.photo}
+                alt={test.author}
                 class="size-full object-cover"
                 loading="lazy"
               />
             </div>
             <div>
-              <div class="text-sm font-semibold text-foreground">{test.author}</div>
-              <div class="text-xs text-muted-foreground">{test.role}</div>
+              <div class="text-sm font-semibold" style="color: #111111;">{test.author}</div>
+              <div class="text-xs mt-0.5" style="color: #5A5A5A;">{test.role}</div>
             </div>
           </div>
         </div>
