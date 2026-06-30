@@ -1,0 +1,81 @@
+---
+const testimonials = [
+  {
+    quote: "Băiatul meu de 12 ani a participat la atelierele creative. A fost fascinat să vadă cum un obiect desenat de el pe calculator este creat fizic, strat cu strat. Dincolo de joacă, a învățat noțiuni reale de geometrie în spațiu și programare.",
+    author: "Radu Vasilescu",
+    role: "Părinte",
+    initials: "RV",
+    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80"
+  },
+  {
+    quote: "Mentorship-ul de la cursul de Design Interior mi-a schimbat parcursul profesional. Posibilitatea de a lucra direct cu softuri CAD și de a crea machete în laborator mi-a oferit încrederea și portofoliul de care aveam nevoie ca să încep pe cont propriu.",
+    author: "Elena Marin",
+    role: "Freelance Designer (Absolventă)",
+    initials: "EM",
+    photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=80"
+  },
+  {
+    quote: "Am organizat un workshop privat de design de produs cu echipa noastră. A fost cel mai antrenant team-building: să schițezi împreună o idee, să o printezi 3D și să o asamblezi te învață extrem de multe despre colaborare.",
+    author: "Mihai Stan",
+    role: "Director Operațional, Tech Corp",
+    initials: "MS",
+    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80"
+  }
+];
+---
+
+<section id="testimoniale" class="relative py-24 md:py-32 bg-muted/30 border-y border-border/40">
+  <div class="mx-auto max-w-7xl px-6">
+    
+    {/* Section Header */}
+    <div class="max-w-3xl mb-16 md:mb-20">
+      <span class="inline-block text-xs font-semibold tracking-wider text-brand uppercase mb-3">
+        Experiențe reale
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+        Ce spun cursanții și partenerii noștri
+      </h2>
+      <p class="mt-4 text-base md:text-lg text-muted-foreground">
+        Nu ne crede pe cuvânt. Iată părerile celor care au trecut pragul laboratorului nostru și au transformat conceptele teoretice în realități palpabile.
+      </p>
+    </div>
+
+    {/* Testimonials Grid */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {testimonials.map((test) => (
+        <div
+          class="flex flex-col justify-between rounded-2xl border border-border/40 bg-background p-8 hover:border-brand/20 transition-all duration-300 hover:scale-[1.01]"
+        >
+          {/* Quote mark or icon */}
+          <div class="text-brand/20 mb-6">
+            <svg class="size-8 fill-current" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.996 3.638-3.996 5.849h3.996v10h-10zm-12 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+          </div>
+
+          {/* Quote text */}
+          <p class="text-base text-muted-foreground leading-relaxed italic mb-8 flex-grow">
+            „{test.quote}”
+          </p>
+
+          {/* Author footer */}
+          <div class="flex items-center gap-3 pt-6 border-t border-border/20">
+            {/* Minimal Avatar placeholder using photo */}
+            <div class="size-10 rounded-full border border-border/40 overflow-hidden shrink-0">
+              <img 
+                src={test.photo} 
+                alt={test.author} 
+                class="size-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-foreground">{test.author}</div>
+              <div class="text-xs text-muted-foreground">{test.role}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
