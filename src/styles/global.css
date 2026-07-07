@@ -6,8 +6,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --font-heading: 'Playfair Display', Georgia, serif;
-    --font-sans: 'Inter', 'Geist Variable', sans-serif;
+    --font-heading: 'Manrope', sans-serif;
+    --font-sans: 'Manrope', sans-serif;
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -167,7 +167,7 @@
     }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', 'Geist Variable', sans-serif;
+    font-family: 'Manrope', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     }
@@ -255,7 +255,7 @@
 
 /* ── Premium scroll indicator ───────────────────────────────── */
 .bs-label {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 0.625rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
