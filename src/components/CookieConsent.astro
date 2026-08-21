@@ -1,0 +1,369 @@
+---
+// CookieConsent.astro — Privacy & Cookie Consent Manager for BlankSpace
+---
+
+<div id="cookie-consent-wrapper" class="relative z-[9990]">
+  {/* ── Layer 1: Cookie Banner ── */}
+  <aside
+    id="cookie-banner"
+    role="region"
+    aria-label="Preferințe privind cookie-urile"
+    class="fixed bottom-0 left-0 right-0 p-4 md:p-6 pointer-events-none flex justify-center transition-all duration-300 transform translate-y-8 opacity-0"
+    style="display: none;"
+  >
+    <div
+      class="pointer-events-auto w-full max-w-4xl rounded-2xl bg-white border border-[#D9D6D1] shadow-2xl p-5 md:p-6 space-y-4"
+      style="box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);"
+    >
+      <div class="space-y-2">
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-4 h-[2px] bg-[#B8A22A]"></span>
+          <h2 class="text-base md:text-lg font-bold text-[#111111]" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+            Preferințe privind cookie-urile
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-[#4B5563] leading-relaxed body-text">
+          Folosim tehnologii strict necesare pentru funcționarea site-ului. Cu acordul tău putem încărca și servicii externe, precum Google Maps, care pot utiliza cookie-uri sau tehnologii similare. Poți accepta, refuza sau modifica oricând opțiunile. Consultă <a href="/politica-de-cookies" class="text-[#B8A22A] underline font-medium hover:text-[#8A7020]">Politica de cookies</a>.
+        </p>
+      </div>
+
+      {/* Buttons with comparable visual prominence */}
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-2.5 pt-1">
+        <button
+          type="button"
+          id="cookie-banner-reject-btn"
+          class="min-h-[42px] px-5 rounded-lg text-xs md:text-sm font-semibold transition-all duration-150 border border-[#D9D6D1] bg-[#F7F6F2] hover:bg-[#EBE8E1] active:scale-[0.98] text-[#111111] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A22A]"
+          style="font-family: 'Plus Jakarta Sans', sans-serif;"
+        >
+          Refuză opționale
+        </button>
+        <button
+          type="button"
+          id="cookie-banner-settings-btn"
+          class="min-h-[42px] px-5 rounded-lg text-xs md:text-sm font-semibold transition-all duration-150 border border-[#D9D6D1] bg-[#F7F6F2] hover:bg-[#EBE8E1] active:scale-[0.98] text-[#111111] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A22A]"
+          style="font-family: 'Plus Jakarta Sans', sans-serif;"
+        >
+          Setări
+        </button>
+        <button
+          type="button"
+          id="cookie-banner-accept-btn"
+          class="min-h-[42px] px-5 rounded-lg text-xs md:text-sm font-semibold transition-all duration-150 border border-[#B8A22A] bg-[#B8A22A] hover:bg-[#A38E22] active:scale-[0.98] text-[#111111] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A22A]"
+          style="font-family: 'Plus Jakarta Sans', sans-serif; box-shadow: 0 2px 10px rgba(184, 162, 42, 0.25);"
+        >
+          Acceptă opționale
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  {/* ── Layer 2: Settings Panel Modal ── */}
+  <div
+    id="cookie-settings-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cookie-settings-title"
+    class="fixed inset-0 z-[9995] flex items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none"
+    style="display: none; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(4px);"
+  >
+    <div
+      id="cookie-settings-panel"
+      class="w-full max-w-xl rounded-2xl bg-white border border-[#D9D6D1] shadow-2xl p-6 md:p-8 space-y-6 max-h-[90vh] overflow-y-auto transform transition-transform duration-300 scale-95"
+      style="box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);"
+    >
+      {/* Header */}
+      <div class="flex items-center justify-between pb-4 border-b border-[#E8E5E0]">
+        <div>
+          <h2 id="cookie-settings-title" class="text-lg md:text-xl font-bold text-[#111111]" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+            Setări cookie-uri și servicii externe
+          </h2>
+          <p class="text-xs text-[#6B7280] mt-0.5 body-text">
+            Personalizează opțiunile tale de confidențialitate
+          </p>
+        </div>
+        <button
+          type="button"
+          id="cookie-settings-close-btn"
+          class="p-2 rounded-lg text-[#6B7280] hover:text-[#111111] hover:bg-[#F4F4F4] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A22A]"
+          aria-label="Închide panoul de setări"
+        >
+          <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Categories */}
+      <div class="space-y-4">
+        
+        {/* Category 1: Strict Necesare */}
+        <div class="p-4 rounded-xl bg-[#FAF9F5] border border-[#E8E5E0] space-y-2">
+          <div class="flex items-center justify-between gap-4">
+            <h3 class="text-sm font-bold text-[#111111]" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+              Strict necesare
+            </h3>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[#EBE8E1] text-[#4B5563] shrink-0">
+              Întotdeauna active
+            </span>
+          </div>
+          <p class="text-xs text-[#4B5563] leading-relaxed body-text">
+            Necesare pentru funcționarea, securitatea site-ului și memorarea preferinței privind cookie-urile.
+          </p>
+        </div>
+
+        {/* Category 2: Conținut Extern */}
+        <div class="p-4 rounded-xl bg-[#FAF9F5] border border-[#E8E5E0] space-y-2">
+          <div class="flex items-center justify-between gap-4">
+            <label for="cookie-toggle-external" class="text-sm font-bold text-[#111111] cursor-pointer" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+              Conținut extern
+            </label>
+            <div class="relative inline-flex items-center cursor-pointer shrink-0">
+              <input
+                type="checkbox"
+                id="cookie-toggle-external"
+                class="sr-only peer"
+              />
+              <div class="w-11 h-6 bg-[#D9D6D1] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[#B8A22A] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-[#D9D6D1] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#B8A22A]"></div>
+            </div>
+          </div>
+          <p class="text-xs text-[#4B5563] leading-relaxed body-text">
+            Permite încărcarea serviciilor furnizate de terți, precum Google Maps. Acești furnizori pot utiliza cookie-uri sau tehnologii similare.
+          </p>
+        </div>
+
+      </div>
+
+      {/* Action buttons */}
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-3 pt-3 border-t border-[#E8E5E0]">
+        <button
+          type="button"
+          id="cookie-modal-accept-btn"
+          class="min-h-[42px] px-5 rounded-lg text-xs md:text-sm font-semibold transition-all duration-150 border border-[#B8A22A] bg-[#B8A22A] hover:bg-[#A38E22] active:scale-[0.98] text-[#111111] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A22A]"
+          style="font-family: 'Plus Jakarta Sans', sans-serif;"
+        >
+          Acceptă opționale
+        </button>
+        <button
+          type="button"
+          id="cookie-modal-save-btn"
+          class="min-h-[42px] px-5 rounded-lg text-xs md:text-sm font-semibold transition-all duration-150 border border-[#D9D6D1] bg-[#111111] hover:bg-[#2A2A2A] active:scale-[0.98] text-white cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A22A]"
+          style="font-family: 'Plus Jakarta Sans', sans-serif;"
+        >
+          Salvează preferințele
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── CONSTANTS & STATE MANAGEMENT ──────────────────────────────────────────
+  const STORAGE_KEY = 'blankspace_cookie_preferences_v1';
+  const SIX_MONTHS_MS = 180 * 24 * 60 * 60 * 1000; // 180 days
+
+  interface CookiePreferences {
+    version: number;
+    externalContent: boolean;
+    timestamp: number;
+  }
+
+  function getStoredPreferences(): CookiePreferences | null {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return null;
+      const parsed: CookiePreferences = JSON.parse(raw);
+      if (!parsed || typeof parsed.externalContent !== 'boolean' || !parsed.timestamp) {
+        return null;
+      }
+      // Expire after 6 months
+      if (Date.now() - parsed.timestamp > SIX_MONTHS_MS) {
+        localStorage.removeItem(STORAGE_KEY);
+        return null;
+      }
+      return parsed;
+    } catch {
+      return null;
+    }
+  }
+
+  function savePreferences(externalContent: boolean) {
+    const prefs: CookiePreferences = {
+      version: 1,
+      externalContent,
+      timestamp: Date.now(),
+    };
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+    } catch {
+      // localStorage may be disabled in private mode
+    }
+
+    // Broadcast consent update to any active components (such as Google Maps)
+    window.dispatchEvent(
+      new CustomEvent('blankspace:consent-updated', {
+        detail: { externalContent },
+      })
+    );
+  }
+
+  // ── DOM ELEMENTS ──────────────────────────────────────────────────────────
+  const banner          = document.getElementById('cookie-banner');
+  const bannerRejectBtn = document.getElementById('cookie-banner-reject-btn');
+  const bannerSettingsBtn = document.getElementById('cookie-banner-settings-btn');
+  const bannerAcceptBtn = document.getElementById('cookie-banner-accept-btn');
+
+  const modal           = document.getElementById('cookie-settings-modal');
+  const modalCloseBtn   = document.getElementById('cookie-settings-close-btn');
+  const toggleExternal  = document.getElementById('cookie-toggle-external') as HTMLInputElement | null;
+  const modalSaveBtn    = document.getElementById('cookie-modal-save-btn');
+  const modalAcceptBtn  = document.getElementById('cookie-modal-accept-btn');
+
+  // ── BANNER CONTROLS ───────────────────────────────────────────────────────
+  function showBanner() {
+    if (!banner) return;
+    banner.style.display = 'flex';
+    requestAnimationFrame(() => {
+      banner.classList.remove('translate-y-8', 'opacity-0');
+      banner.classList.add('translate-y-0', 'opacity-100');
+    });
+  }
+
+  function hideBanner() {
+    if (!banner) return;
+    banner.classList.remove('translate-y-0', 'opacity-100');
+    banner.classList.add('translate-y-8', 'opacity-0');
+    setTimeout(() => {
+      banner.style.display = 'none';
+    }, 300);
+  }
+
+  // ── MODAL CONTROLS ────────────────────────────────────────────────────────
+  function openModal() {
+    if (!modal) return;
+    const current = getStoredPreferences();
+    if (toggleExternal) {
+      toggleExternal.checked = current ? current.externalContent : false;
+    }
+    modal.style.display = 'flex';
+    requestAnimationFrame(() => {
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100', 'pointer-events-auto');
+      const panel = document.getElementById('cookie-settings-panel');
+      if (panel) {
+        panel.classList.remove('scale-95');
+        panel.classList.add('scale-100');
+      }
+    });
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove('opacity-100', 'pointer-events-auto');
+    modal.classList.add('opacity-0', 'pointer-events-none');
+    const panel = document.getElementById('cookie-settings-panel');
+    if (panel) {
+      panel.classList.remove('scale-100');
+      panel.classList.add('scale-95');
+    }
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 300);
+  }
+
+  // ── EVENT LISTENERS ───────────────────────────────────────────────────────
+
+  // Banner Actions
+  if (bannerRejectBtn) {
+    bannerRejectBtn.addEventListener('click', () => {
+      savePreferences(false);
+      hideBanner();
+    });
+  }
+
+  if (bannerAcceptBtn) {
+    bannerAcceptBtn.addEventListener('click', () => {
+      savePreferences(true);
+      hideBanner();
+    });
+  }
+
+  if (bannerSettingsBtn) {
+    bannerSettingsBtn.addEventListener('click', () => {
+      openModal();
+    });
+  }
+
+  // Modal Actions
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeModal);
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  }
+
+  if (modalSaveBtn) {
+    modalSaveBtn.addEventListener('click', () => {
+      const external = toggleExternal ? toggleExternal.checked : false;
+      savePreferences(external);
+      closeModal();
+      hideBanner();
+    });
+  }
+
+  if (modalAcceptBtn) {
+    modalAcceptBtn.addEventListener('click', () => {
+      savePreferences(true);
+      if (toggleExternal) toggleExternal.checked = true;
+      closeModal();
+      hideBanner();
+    });
+  }
+
+  // Footer "Setări cookies" button trigger
+  function attachFooterTrigger() {
+    const footerBtn = document.getElementById('cookie-settings-btn');
+    if (footerBtn) {
+      footerBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    }
+  }
+
+  // Keyboard accessibility: ESC key closes modal
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
+      closeModal();
+    }
+  });
+
+  // Global helper for opening settings panel from anywhere
+  (window as unknown as { openBlankSpaceCookieSettings?: () => void }).openBlankSpaceCookieSettings = openModal;
+
+  // ── INITIALIZATION ────────────────────────────────────────────────────────
+  function init() {
+    attachFooterTrigger();
+    const stored = getStoredPreferences();
+    if (!stored) {
+      showBanner();
+    } else {
+      // Dispatches initial state so components (e.g. Maps) know consent is already given
+      window.dispatchEvent(
+        new CustomEvent('blankspace:consent-updated', {
+          detail: { externalContent: stored.externalContent },
+        })
+      );
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+</script>

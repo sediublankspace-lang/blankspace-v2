@@ -1,12 +1,13 @@
 ---
 const currentYear = new Date().getFullYear();
 
-// Programmes — synced with homepage activities
+// Programmes — synced with homepage activities & modals
 const courses = [
-  { name: "Curs Design Interior", href: "/cursuri/design-interior" },
-  { name: "Curs Imprimare 3D", href: "/cursuri/imprimare-3d" },
-  { name: "Cursuri competențe digitale ICDL", href: "/cursuri/icdl" },
-  { name: "Centru de testare ICDL", href: "/cursuri/certificare-icdl" }
+  { name: "Curs Design Interior",             href: "/#activitati" },
+  { name: "Curs Imprimare 3D",                href: "/#activitati" },
+  { name: "Cursuri competențe digitale ICDL", href: "/#activitati" },
+  { name: "Pregătire admitere Arhitectură",    href: "/#activitati" },
+  { name: "Centru de testare ICDL",            href: "/cursuri/certificare-icdl" }
 ];
 
 // Main navigation — synced with header (Home · Cursuri · Studio 3D · Contact)
@@ -18,157 +19,284 @@ const mainLinks = [
 ];
 ---
 
-<footer role="contentinfo" style="background: #111111; border-top: 1px solid rgba(255,255,255,0.05);" class="pt-16 md:pt-24 pb-10">
-  <div class="mx-auto max-w-7xl px-6">
+<footer role="contentinfo" class="w-full">
+  {/* ── Main Footer Area — Warm Light Neutral ── */}
+  <div style="background: #F7F6F2; border-top: 1px solid #D9D6D1;" class="pt-14 md:pt-20 pb-12 md:pb-16">
+    <div class="mx-auto max-w-7xl px-6">
+      
+      {/* ── Desktop Grid (3 Columns) ── */}
+      <div class="hidden md:grid md:grid-cols-12 gap-10 lg:gap-14">
 
-    {/* Top golden accent line */}
-    <div class="w-full h-[1px] mb-14" style="background: linear-gradient(90deg, transparent, rgba(184,162,42,0.3), transparent);"></div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-12 pb-14" style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-
-      {/* Brand Column */}
-      <div class="lg:col-span-4 space-y-5">
-        <a href="/" class="flex items-center group" id="footer-logo">
-          <img
-            src="/images/brand/blankspace-logo.svg"
-            alt="BlankSpace"
-            class="h-6 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-200"
-            loading="lazy"
-          />
-        </a>
-
-        <p class="text-sm leading-relaxed max-w-xs body-text" style="color: #5A5A5A;">
-          Centru de formare și creație din Brașov — cursuri autorizate, certificări ICDL și servicii Studio 3D pentru proiecte reale.
-        </p>
-
-        {/* Social icons — Instagram & Facebook only */}
-        <div class="flex gap-3 pt-2">
-
-          {/* Instagram */}
-          <a
-            href="#"
-            class="size-9 rounded-lg flex items-center justify-center transition-all duration-200"
-            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: #5A5A5A;"
-            aria-label="Urmărește BlankSpace pe Instagram"
-            onmouseover="this.style.borderColor='rgba(184,162,42,0.4)'; this.style.color='#B8A22A'; this.style.background='rgba(184,162,42,0.06)';"
-            onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'; this.style.color='#5A5A5A'; this.style.background='rgba(255,255,255,0.04)';"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-            </svg>
+        {/* Column 1 — BlankSpace Brand & Contact */}
+        <div class="md:col-span-6 lg:col-span-5 space-y-6">
+          <a href="/" class="inline-block group" id="footer-logo" aria-label="BlankSpace — pagina principală">
+            <img
+              src="/images/brand/blankspace-logo-dark.svg"
+              alt="BlankSpace"
+              class="w-[165px] lg:w-[175px] h-auto transition-opacity duration-200 group-hover:opacity-85"
+              loading="lazy"
+              width="175"
+              height="58"
+            />
           </a>
 
-          {/* Facebook */}
-          <a
-            href="#"
-            class="size-9 rounded-lg flex items-center justify-center transition-all duration-200"
-            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: #5A5A5A;"
-            aria-label="Urmărește BlankSpace pe Facebook"
-            onmouseover="this.style.borderColor='rgba(184,162,42,0.4)'; this.style.color='#B8A22A'; this.style.background='rgba(184,162,42,0.06)';"
-            onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'; this.style.color='#5A5A5A'; this.style.background='rgba(255,255,255,0.04)';"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true">
-              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-            </svg>
-          </a>
+          <p class="text-sm leading-relaxed max-w-sm body-text" style="color: #4B5563;">
+            Centru de formare și creație din Brașov — cursuri autorizate, certificări ICDL și servicii Studio 3D pentru proiecte reale.
+          </p>
 
+          {/* Contact info list */}
+          <ul class="space-y-3 text-sm body-text" style="color: #4B5563;">
+            <li class="flex items-start gap-2.5">
+              <svg class="size-4 mt-0.5 shrink-0 text-[#B8A22A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              <span>Str. 13 Decembrie nr. 127, bloc 4, parter, Studio BlankSpace, Qualis 2, Brașov, România</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="size-4 shrink-0 text-[#B8A22A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+              <a href="tel:+40772177156" class="transition-colors hover:text-[#B8A22A]">
+                0772 177 156
+              </a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="size-4 shrink-0 text-[#B8A22A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+              <a href="mailto:sediu.blankspace@gmail.com" class="transition-colors hover:text-[#B8A22A]">
+                sediu.blankspace@gmail.com
+              </a>
+            </li>
+          </ul>
+
+          {/* Social icons */}
+          <div class="flex items-center gap-3 pt-2">
+            <a
+              href="https://www.instagram.com/blankspace.brasov/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="size-9 rounded-lg flex items-center justify-center transition-all duration-200"
+              style="background: #FFFFFF; border: 1px solid #D9D6D1; color: #4B5563;"
+              aria-label="Urmărește BlankSpace pe Instagram"
+              onmouseover="this.style.borderColor='rgba(184,162,42,0.6)'; this.style.color='#B8A22A'; this.style.background='rgba(184,162,42,0.08)';"
+              onmouseout="this.style.borderColor='#D9D6D1'; this.style.color='#4B5563'; this.style.background='#FFFFFF';"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+
+            <a
+              href="https://www.facebook.com/blankspace.brasov"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="size-9 rounded-lg flex items-center justify-center transition-all duration-200"
+              style="background: #FFFFFF; border: 1px solid #D9D6D1; color: #4B5563;"
+              aria-label="Urmărește BlankSpace pe Facebook"
+              onmouseover="this.style.borderColor='rgba(184,162,42,0.6)'; this.style.color='#B8A22A'; this.style.background='rgba(184,162,42,0.08)';"
+              onmouseout="this.style.borderColor='#D9D6D1'; this.style.color='#4B5563'; this.style.background='#FFFFFF';"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+          </div>
         </div>
+
+        {/* Column 2 — Programe */}
+        <div class="md:col-span-3 lg:col-span-4 space-y-4">
+          <div>
+            <h4 class="text-xs font-bold tracking-[0.15em] uppercase" style="color: #111111; font-family: 'Plus Jakarta Sans', sans-serif;">
+              Programe
+            </h4>
+            <div class="w-6 h-[2px] mt-2 rounded-full" style="background: #B8A22A;"></div>
+          </div>
+          <ul class="space-y-3">
+            {courses.map((c) => (
+              <li>
+                <a
+                  href={c.href}
+                  class="text-sm transition-colors body-text hover:text-[#B8A22A]"
+                  style="color: #4B5563;"
+                >
+                  {c.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Column 3 — Navigare */}
+        <div class="md:col-span-3 lg:col-span-3 space-y-4">
+          <div>
+            <h4 class="text-xs font-bold tracking-[0.15em] uppercase" style="color: #111111; font-family: 'Plus Jakarta Sans', sans-serif;">
+              Navigare
+            </h4>
+            <div class="w-6 h-[2px] mt-2 rounded-full" style="background: #B8A22A;"></div>
+          </div>
+          <ul class="space-y-3">
+            {mainLinks.map((l) => (
+              <li>
+                <a
+                  href={l.href}
+                  class="text-sm transition-colors body-text hover:text-[#B8A22A]"
+                  style="color: #4B5563;"
+                >
+                  {l.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
       </div>
 
-      {/* Courses Column */}
-      <div class="lg:col-span-3 space-y-4">
-        <h4 class="text-[10px] font-semibold tracking-[0.2em] uppercase" style="color: #4A4A4A; font-family: 'Plus Jakarta Sans', sans-serif;">Programe</h4>
-        <ul class="space-y-2.5">
-          {courses.map((c) => (
-            <li>
-              <a
-                href={c.href}
-                class="text-sm transition-colors body-text"
-                style="color: #3A3A3A;"
-                onmouseover="this.style.color='#B8A22A';"
-                onmouseout="this.style.color='#3A3A3A';"
-              >
-                {c.name}
-              </a>
+      {/* ── Mobile Layout (Compact with Accordions) ── */}
+      <div class="md:hidden space-y-6">
+
+        {/* Mobile Brand & Contact */}
+        <div class="space-y-5">
+          <a href="/" class="inline-block" id="footer-logo-mobile" aria-label="BlankSpace — pagina principală">
+            <img
+              src="/images/brand/blankspace-logo-dark.svg"
+              alt="BlankSpace"
+              class="w-[150px] h-auto"
+              loading="lazy"
+              width="150"
+              height="50"
+            />
+          </a>
+
+          <p class="text-sm leading-relaxed body-text" style="color: #4B5563;">
+            Centru de formare și creație din Brașov — cursuri autorizate, certificări ICDL și servicii Studio 3D pentru proiecte reale.
+          </p>
+
+          <ul class="space-y-2.5 text-sm body-text" style="color: #4B5563;">
+            <li class="flex items-start gap-2.5">
+              <svg class="size-4 mt-0.5 shrink-0 text-[#B8A22A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              <span>Str. 13 Decembrie nr. 127, bloc 4, Brașov, România</span>
             </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Links Column */}
-      <div class="lg:col-span-2 space-y-4">
-        <h4 class="text-[10px] font-semibold tracking-[0.2em] uppercase" style="color: #4A4A4A; font-family: 'Plus Jakarta Sans', sans-serif;">Navigare</h4>
-        <ul class="space-y-2.5">
-          {mainLinks.map((l) => (
-            <li>
-              <a
-                href={l.href}
-                class="text-sm transition-colors body-text"
-                style="color: #3A3A3A;"
-                onmouseover="this.style.color='#B8A22A';"
-                onmouseout="this.style.color='#3A3A3A';"
-              >
-                {l.name}
-              </a>
+            <li class="flex items-center gap-2.5">
+              <svg class="size-4 shrink-0 text-[#B8A22A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+              <a href="tel:+40772177156" class="hover:text-[#B8A22A]">0772 177 156</a>
             </li>
-          ))}
-        </ul>
-      </div>
+            <li class="flex items-center gap-2.5">
+              <svg class="size-4 shrink-0 text-[#B8A22A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+              <a href="mailto:sediu.blankspace@gmail.com" class="hover:text-[#B8A22A]">sediu.blankspace@gmail.com</a>
+            </li>
+          </ul>
 
-      {/* Contact Column */}
-      <div class="lg:col-span-3 space-y-4">
-        <h4 class="text-[10px] font-semibold tracking-[0.2em] uppercase" style="color: #4A4A4A; font-family: 'Plus Jakarta Sans', sans-serif;">Contact</h4>
-        <ul class="space-y-3.5 text-sm body-text" style="color: #3A3A3A;">
-          <li class="flex items-start gap-2.5">
-            <svg class="size-4 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="color: #B8A22A;" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-            </svg>
-            <span>Str. 13 Decembrie nr. 127, bloc 4, parter,<br />Studio BlankSpace, Qualis 2,<br />Brașov, România</span>
-          </li>
-          <li class="flex items-center gap-2.5">
-            <svg class="size-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="color: #B8A22A;" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-            </svg>
-            <a href="tel:+40772177156" class="transition-colors body-text"
-               onmouseover="this.style.color='#B8A22A';"
-               onmouseout="this.style.color='inherit';">
-              0772 177 156
+          {/* Social Icons */}
+          <div class="flex items-center gap-3 pt-1">
+            <a
+              href="https://www.instagram.com/blankspace.brasov/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="size-9 rounded-lg flex items-center justify-center"
+              style="background: #FFFFFF; border: 1px solid #D9D6D1; color: #4B5563;"
+              aria-label="Urmărește BlankSpace pe Instagram"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="size-4"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
             </a>
-          </li>
-          <li class="flex items-center gap-2.5">
-            <svg class="size-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="color: #B8A22A;" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-            </svg>
-            <a href="mailto:sediu.blankspace@gmail.com" class="transition-colors body-text"
-               onmouseover="this.style.color='#B8A22A';"
-               onmouseout="this.style.color='inherit';">
-              sediu.blankspace@gmail.com
+            <a
+              href="https://www.facebook.com/blankspace.brasov"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="size-9 rounded-lg flex items-center justify-center"
+              style="background: #FFFFFF; border: 1px solid #D9D6D1; color: #4B5563;"
+              aria-label="Urmărește BlankSpace pe Facebook"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="size-4"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
+
+        {/* Mobile Accordion — Programe */}
+        <details class="group border-t border-[#D9D6D1] pt-3.5">
+          <summary class="flex items-center justify-between font-semibold text-sm cursor-pointer list-none select-none" style="color: #111111; font-family: 'Plus Jakarta Sans', sans-serif;">
+            <span>Programe</span>
+            <svg class="size-4 text-[#B8A22A] transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </summary>
+          <ul class="mt-3 space-y-2.5 pl-2 pb-2">
+            {courses.map((c) => (
+              <li>
+                <a href={c.href} class="text-sm body-text text-[#4B5563] hover:text-[#B8A22A]">
+                  {c.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        {/* Mobile Accordion — Navigare */}
+        <details class="group border-t border-[#D9D6D1] pt-3.5">
+          <summary class="flex items-center justify-between font-semibold text-sm cursor-pointer list-none select-none" style="color: #111111; font-family: 'Plus Jakarta Sans', sans-serif;">
+            <span>Navigare</span>
+            <svg class="size-4 text-[#B8A22A] transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </summary>
+          <ul class="mt-3 space-y-2.5 pl-2 pb-2">
+            {mainLinks.map((l) => (
+              <li>
+                <a href={l.href} class="text-sm body-text text-[#4B5563] hover:text-[#B8A22A]">
+                  {l.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
       </div>
 
     </div>
+  </div>
 
-    {/* Bottom row */}
-    <div class="flex flex-col sm:flex-row items-center justify-between pt-8 text-xs gap-4 body-text" style="color: #3A3A3A;">
+  {/* ── Bottom Legal Bar — Black ── */}
+  <div style="background: #111111; border-top: 1px solid rgba(255,255,255,0.08);" class="py-5">
+    <div class="mx-auto max-w-7xl px-6 flex flex-col sm:flex-row items-center justify-between text-xs gap-3.5 body-text" style="color: #9CA3AF;">
       <div>
         &copy; {currentYear} BlankSpace. Toate drepturile rezervate.
       </div>
-      <div class="flex gap-6">
-        <a href="/termeni" class="transition-colors"
-           onmouseover="this.style.color='#B8A22A';"
-           onmouseout="this.style.color='#3A3A3A';">
+      <div class="flex flex-wrap items-center gap-5 sm:gap-6">
+        <a
+          href="/termeni-si-conditii"
+          class="transition-colors hover:text-[#B8A22A]"
+        >
           Termeni și condiții
         </a>
-        <a href="/confidentialitate" class="transition-colors"
-           onmouseover="this.style.color='#B8A22A';"
-           onmouseout="this.style.color='#3A3A3A';">
+        <a
+          href="/politica-de-confidentialitate"
+          class="transition-colors hover:text-[#B8A22A]"
+        >
           Politica de confidențialitate
         </a>
+        <a
+          href="/politica-de-cookies"
+          class="transition-colors hover:text-[#B8A22A]"
+        >
+          Politica de cookies
+        </a>
+        <button
+          type="button"
+          id="cookie-settings-btn"
+          class="transition-colors hover:text-[#B8A22A] cursor-pointer bg-transparent border-0 p-0 text-inherit font-inherit text-xs"
+        >
+          Setări cookies
+        </button>
       </div>
     </div>
   </div>
