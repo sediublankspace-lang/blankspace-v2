@@ -74,15 +74,29 @@
         <div class="relative rounded-2xl overflow-hidden aspect-[4/5] lg:aspect-[3/4]"
              style="border: 1px solid rgba(184,162,42,0.12); box-shadow: 0 40px 100px rgba(0,0,0,0.65);">
 
-          <img
-            src="https://images.unsplash.com/photo-1562408590-e32931084e23?auto=format&fit=crop&w=900&q=85"
-            alt="BlankSpace Brașov — curs design interior, imprimare 3D și competențe digitale ICDL"
-            class="absolute inset-0 size-full object-cover"
-            loading="eager"
-            fetchpriority="high"
-            width="900"
-            height="1125"
-          />
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcset="/images/home/hero-blankspace-desktop-1600x900.webp"
+              width="1600"
+              height="900"
+            />
+            <source
+              media="(min-width: 640px)"
+              srcset="/images/home/hero-blankspace-tablet-1280x960.webp"
+              width="1280"
+              height="960"
+            />
+            <img
+              src="/images/home/hero-blankspace-mobile-900x1200.webp"
+              alt="Spațiul BlankSpace din Brașov pentru cursuri, formare și activități practice"
+              class="absolute inset-0 size-full object-cover"
+              loading="eager"
+              fetchpriority="high"
+              width="900"
+              height="1200"
+            />
+          </picture>
 
           {/* Cinematic gradient overlay */}
           <div class="absolute inset-0" style="background: linear-gradient(170deg, rgba(17,17,17,0.08) 0%, rgba(17,17,17,0.0) 35%, rgba(17,17,17,0.55) 100%);"></div>

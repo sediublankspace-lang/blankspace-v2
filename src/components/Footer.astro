@@ -11,9 +11,10 @@ const courses = [
 
 // Main navigation — synced with header (Home · Cursuri · Studio 3D · Contact)
 const mainLinks = [
-  { name: "Home", href: "/" },
+  { name: "Home",      href: "/" },
+  { name: "Cursuri",   href: "/#activitati" },
   { name: "Studio 3D", href: "/studio" },
-  { name: "Contact", href: "/#contact" }
+  { name: "Contact",   href: "/#contact" }
 ];
 ---
 
@@ -27,11 +28,13 @@ const mainLinks = [
 
       {/* Brand Column */}
       <div class="lg:col-span-4 space-y-5">
-        <a href="/" class="flex items-center gap-2 group" id="footer-logo">
-          <span class="text-xl font-bold tracking-tight" style="color: #F4F4F4; font-family: 'Plus Jakarta Sans', sans-serif;">
-            Blank<span style="color: #B8A22A;">Space</span>
-          </span>
-          <div class="size-1.5 rounded-full group-hover:scale-125 transition-transform duration-300" style="background: #B8A22A;" />
+        <a href="/" class="flex items-center group" id="footer-logo">
+          <img
+            src="/images/brand/blankspace-logo.svg"
+            alt="BlankSpace"
+            class="h-6 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-200"
+            loading="lazy"
+          />
         </a>
 
         <p class="text-sm leading-relaxed max-w-xs body-text" style="color: #5A5A5A;">

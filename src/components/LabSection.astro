@@ -43,15 +43,15 @@ const capabilities = [
       <div class="flex items-center justify-center gap-3">
         <span class="inline-block w-8 h-[2px]" style="background: #B8A22A;"></span>
         <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color: #B8A22A; font-family: 'Plus Jakarta Sans', sans-serif;">
-          BlankSpace Studio 3D
+          STUDIO 3D
         </span>
         <span class="inline-block w-8 h-[2px]" style="background: #B8A22A;"></span>
       </div>
-      <h2 id="studio-heading" class="heading-2" style="color: #F4F4F4;">
-        Transformăm ideile în obiecte și soluții personalizate.
+      <h2 id="studio-heading" class="heading-2 text-center" style="color: #F4F4F4;">
+        STUDIO 3D
       </h2>
-      <p class="text-base leading-relaxed body-text max-w-2xl mx-auto" style="color: #8A8A8A;">
-        În cadrul Studio 3D lucrăm la proiecte custom folosind scanare 3D (obiecte fizice), modelare, imprimare 3D și prototipare. Dezvoltăm piese personalizate, machete, prototipuri și alte proiecte specifice.
+      <p class="text-base leading-relaxed body-text max-w-2xl mx-auto text-center" style="color: #8A8A8A;">
+        Transformăm ideile în obiecte și soluții personalizate. Lucrăm la proiecte custom folosind scanare 3D (obiecte fizice), modelare, imprimare 3D și prototipare pentru Brașov și împrejurimi.
       </p>
     </div>
 
@@ -74,14 +74,23 @@ const capabilities = [
 
     {/* CTA */}
     <div class="text-center pt-8">
-      <a
-        href="/studio"
+      <button
+        type="button"
         id="studio-cta-btn"
-        class="inline-flex min-h-[44px] h-11 items-center justify-center rounded-lg px-6 text-sm font-semibold transition-all hover:scale-[1.02] active:scale-[0.98] btn-text focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A22A] focus-visible:ring-offset-2"
-        style="background: #B8A22A; color: #111111; box-shadow: 0 4px 20px rgba(184,162,42,0.28);"
+        class="inline-flex min-h-[44px] h-11 items-center justify-center rounded-lg px-6 text-sm font-semibold transition-all hover:scale-[1.02] active:scale-[0.98] btn-text focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A22A] focus-visible:ring-offset-2 cursor-pointer"
+        style="background: #B8A22A; color: #111111; box-shadow: 0 4px 20px rgba(184,162,42,0.28); border: none;"
+        onclick="(function(){
+          var contact = document.getElementById('contact');
+          if(contact) contact.scrollIntoView({behavior:'smooth', block:'start'});
+          setTimeout(function(){
+            var sel = document.getElementById('contact-interest');
+            if(sel){ sel.value='Studio 3D'; sel.dispatchEvent(new Event('change',{bubbles:true})); }
+          }, 600);
+        })()"
+        aria-label="Solicită detalii despre Studio 3D BlankSpace"
       >
-        Descoperă Studio 3D
-      </a>
+        Solicită detalii
+      </button>
     </div>
 
   </div>

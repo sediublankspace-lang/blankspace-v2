@@ -1,0 +1,574 @@
+---
+// CourseModals — rendered in initial DOM for SEO.
+// Each modal is hidden via aria-hidden + display logic controlled by JS.
+// Content is available to crawlers on first parse.
+---
+
+<!-- ===================================================
+     COURSE MODALS — pre-rendered HTML for SEO
+     Visibility controlled by JS (no JS = no modal, content still present)
+     =================================================== -->
+
+<div id="course-modals-root" aria-live="polite">
+
+  <!-- ── Modal: Design Interior ── -->
+  <div
+    id="modal-design-interior"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-di-title"
+    tabindex="-1"
+    class="modal-overlay"
+    aria-hidden="true"
+    style="display:none;"
+  >
+    <div class="modal-backdrop" data-close-modal="modal-design-interior"></div>
+    <div class="modal-panel" role="document">
+      <div class="modal-header">
+        <h2 id="modal-di-title" class="modal-title">Curs Design Interior</h2>
+        <button class="modal-close" aria-label="Închide fereastra" data-close-modal="modal-design-interior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="size-5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <span class="modal-badge">Curs autorizat · program de specializare</span>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Despre curs</h3>
+          <p>Cursul de Design Interior de la BlankSpace din Brașov oferă o pregătire practică și aplicată în planificarea, amenajarea și prezentarea spațiilor. Participanții lucrează cu instrumente profesionale și dezvoltă proiecte reale pe parcursul cursului.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Cui se adresează</h3>
+          <p>Persoanelor care doresc să înceapă o carieră în design interior, celor care vor să-și amenajeze propriile spații cu competențe solide, sau celor care vor să înțeleagă principiile vizuale și tehnice ale amenajărilor interioare.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Ce vei învăța</h3>
+          <ul class="modal-list">
+            <li>Analiza și citirea spațiului interior</li>
+            <li>Principii de estetică, proporție și culoare</li>
+            <li>Elaborarea planurilor de amenajare</li>
+            <li>Selecția mobilierului, materialelor și finisajelor</li>
+            <li>Prezentarea proiectului de design interior</li>
+            <li>Utilizarea instrumentelor profesionale de design</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Structura cursului</h3>
+          <p>Cursul combină sesiuni teoretice cu ateliere practice și proiecte aplicate. Structura detaliată este disponibilă la sediu sau la cerere.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Certificare</h3>
+          <p>Cursul este autorizat în cadrul sistemului național de formare profesională a adulților. La finalizare, participanții primesc certificatul corespunzător programului de specializare.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Locație / format</h3>
+          <p>Cursul se desfășoară la sediul BlankSpace din Brașov: Str. 13 Decembrie nr. 127, bloc 4, parter, Qualis 2. Format față-în-față, în grupe mici.</p>
+        </div>
+
+        <div class="modal-contact">
+          <a href="/#contact" class="modal-cta" data-interest="Design Interior" data-close-modal="modal-design-interior">
+            Solicită informații / Înscrie-te
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Modal: Imprimare 3D ── -->
+  <div
+    id="modal-imprimare-3d"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-3d-title"
+    tabindex="-1"
+    class="modal-overlay"
+    aria-hidden="true"
+    style="display:none;"
+  >
+    <div class="modal-backdrop" data-close-modal="modal-imprimare-3d"></div>
+    <div class="modal-panel" role="document">
+      <div class="modal-header">
+        <h2 id="modal-3d-title" class="modal-title">Curs Imprimare 3D</h2>
+        <button class="modal-close" aria-label="Închide fereastra" data-close-modal="modal-imprimare-3d">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="size-5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3 class="modal-section-title">Despre curs</h3>
+          <p>Cursul de Imprimare 3D de la BlankSpace Brașov este conceput pentru pasionați, începători și oricine vrea să descopere tehnologia imprimării 3D — de la pregătirea modelului digital până la realizarea obiectului fizic. Posibilitate de certificare ICDL 3D Printing.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Cui se adresează</h3>
+          <p>Oricui este curios despre imprimarea 3D: elevi, studenți, adulți, pasionați de tehnologie, designeri sau antreprenori care vor să înțeleagă și să folosească această tehnologie în proiecte proprii.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Ce vei învăța</h3>
+          <ul class="modal-list">
+            <li>Principiile imprimării 3D și tipuri de imprimante</li>
+            <li>Pregătirea și slicing-ul modelelor 3D</li>
+            <li>Materiale și filamente utilizate în imprimare</li>
+            <li>Calibrare, parametri și rezolvarea problemelor comune</li>
+            <li>Finisarea și post-procesarea obiectelor imprimate</li>
+            <li>Proiecte practice cu imprimante FDM</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Structura cursului</h3>
+          <p>Sesiuni practice la imprimantele din laboratorul BlankSpace, cu proiecte pe tot parcursul cursului. Structura completă este disponibilă la cerere.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Certificare</h3>
+          <p>La finalizare se poate obține certificarea ICDL 3D Printing, recunoscută internațional, în cadrul centrului de testare autorizat BlankSpace.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Locație / format</h3>
+          <p>Brașov, sediu BlankSpace: Str. 13 Decembrie nr. 127, bloc 4, parter, Qualis 2. Format față-în-față, grupe mici, acces la echipamentele din laborator.</p>
+        </div>
+
+        <div class="modal-contact">
+          <a href="/#contact" class="modal-cta" data-interest="3D Printing" data-close-modal="modal-imprimare-3d">
+            Solicită informații / Înscrie-te
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Modal: Competențe digitale ICDL ── -->
+  <div
+    id="modal-icdl"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-icdl-title"
+    tabindex="-1"
+    class="modal-overlay"
+    aria-hidden="true"
+    style="display:none;"
+  >
+    <div class="modal-backdrop" data-close-modal="modal-icdl"></div>
+    <div class="modal-panel" role="document">
+      <div class="modal-header">
+        <h2 id="modal-icdl-title" class="modal-title">Cursuri de competențe digitale ICDL</h2>
+        <button class="modal-close" aria-label="Închide fereastra" data-close-modal="modal-icdl">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="size-5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3 class="modal-section-title">Despre curs</h3>
+          <p>BlankSpace este centru de testare acreditat ICDL în Brașov. Oferim pregătire și certificare internațională a competențelor digitale prin programele ICDL recunoscute la nivel mondial. Cursurile ICDL se adresează elevilor, studenților, adulților și cadrelor didactice care doresc să-și certifice competențele digitale.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Cui se adresează</h3>
+          <p>Elevilor și studenților care pregătesc examenul de bacalaureat sau admiterea la facultate, cadrelor didactice, adulților care doresc să-și îmbunătățească și să-și certifice competențele digitale la nivel internațional.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Module disponibile</h3>
+          <ul class="modal-list">
+            <li><strong>ICDL CORE</strong> — competențe digitale fundamentale</li>
+            <li><strong>PROFIL BAC</strong> — pregătire pentru examenul național cu componentă digitală</li>
+            <li><strong>PROFIL DIDACTIC</strong> — competențe digitale pentru cadre didactice</li>
+            <li><strong>AI</strong> — competențe în utilizarea inteligenței artificiale</li>
+            <li><strong>Alte module</strong> — Spreadsheets, Presentations, Online Essentials și altele</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Certificare</h3>
+          <p>Certificatele ICDL sunt recunoscute internațional în peste 100 de țări. Testarea se susține direct la BlankSpace Brașov, centru de testare acreditat ICDL România.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Locație / format</h3>
+          <p>Brașov, sediu BlankSpace: Str. 13 Decembrie nr. 127, bloc 4, parter, Qualis 2. Pregătire și testare față-în-față.</p>
+        </div>
+
+        <div class="modal-contact">
+          <a href="/#contact" class="modal-cta" data-interest="ICDL" data-close-modal="modal-icdl">
+            Solicită informații / Înscrie-te
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Modal: Pregătire admitere Arhitectură ── -->
+  <div
+    id="modal-arhitectura"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-arh-title"
+    tabindex="-1"
+    class="modal-overlay"
+    aria-hidden="true"
+    style="display:none;"
+  >
+    <div class="modal-backdrop" data-close-modal="modal-arhitectura"></div>
+    <div class="modal-panel" role="document">
+      <div class="modal-header">
+        <h2 id="modal-arh-title" class="modal-title">Pregătire admitere Arhitectură</h2>
+        <button class="modal-close" aria-label="Închide fereastra" data-close-modal="modal-arhitectura">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="size-5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3 class="modal-section-title">Despre curs</h3>
+          <p>Pregătire practică dedicată liceenilor și viitorilor candidați la facultățile de arhitectură din România. Cursul acoperă principalele competențe vizuale și tehnice evaluate la admitere: desen, perspectivă, compoziție, volumetrie și geometrie descriptivă.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Cui se adresează</h3>
+          <p>Elevilor de liceu și absolvenților care se pregătesc pentru examenul de admitere la facultățile de arhitectură sau urbanism. Nu este necesar un nivel anterior de pregătire artistică formală.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Ce vei învăța</h3>
+          <ul class="modal-list">
+            <li>Desen tehnic și artistic de bază</li>
+            <li>Perspectivă (frontală, oblică) și reprezentare spațială</li>
+            <li>Compoziție și echilibru vizual</li>
+            <li>Volumetrie — reprezentarea formelor tridimensionale</li>
+            <li>Geometrie descriptivă aplicată</li>
+            <li>Dezvoltarea gândirii spațiale</li>
+            <li>Pregătirea și structurarea portofoliului de candidatură</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Structura cursului</h3>
+          <p>Sesiuni individuale și în grup mic, cu exerciții progresive și feedback personalizat. Structura detaliată este disponibilă la cerere.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Certificare</h3>
+          <p>Cursul este de pregătire pentru admitere. BlankSpace nu are afiliere cu nicio universitate și nu garantează admiterea.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">Locație / format</h3>
+          <p>Brașov, sediu BlankSpace: Str. 13 Decembrie nr. 127, bloc 4, parter, Qualis 2. Format față-în-față, grupe mici.</p>
+        </div>
+
+        <div class="modal-contact">
+          <a href="/#contact" class="modal-cta" data-interest="Design Interior" data-close-modal="modal-arhitectura">
+            Solicită informații / Înscrie-te
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /course-modals-root -->
+
+<style>
+  /* ── Overlay ── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 17, 17, 0.68);
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+  }
+
+  /* ── Panel ── */
+  .modal-panel {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    border-radius: 1.25rem;
+    width: 100%;
+    max-width: 640px;
+    max-height: calc(100svh - 2rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.22);
+    border: 1px solid #D9D6D1;
+    outline: none;
+  }
+
+  /* ── Header ── */
+  .modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.5rem 1.75rem 1rem;
+    border-bottom: 1px solid #EEEBE6;
+    position: sticky;
+    top: 0;
+    background: #FFFFFF;
+    z-index: 2;
+  }
+  .modal-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .modal-close {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    min-width: 2.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #D9D6D1;
+    background: transparent;
+    color: #5A5A5A;
+    cursor: pointer;
+    transition: all 0.15s;
+    padding: 0;
+  }
+  .modal-close:hover {
+    background: #F4F4F4;
+    color: #111111;
+    border-color: #B8A22A;
+  }
+  .modal-close:focus-visible {
+    outline: 2px solid #B8A22A;
+    outline-offset: 2px;
+  }
+
+  /* ── Body ── */
+  .modal-body {
+    padding: 1.5rem 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .modal-badge {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: 0.04em;
+    background: rgba(184,162,42,0.09);
+    color: #8A7020;
+    border: 1px solid rgba(184,162,42,0.22);
+  }
+
+  /* ── Section ── */
+  .modal-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .modal-section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #B8A22A;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+  }
+  .modal-section p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9375rem;
+    color: #374151;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .modal-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+  .modal-list li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9375rem;
+    color: #374151;
+    line-height: 1.5;
+  }
+
+  /* ── CTA ── */
+  .modal-contact {
+    padding-top: 0.5rem;
+    border-top: 1px solid #EEEBE6;
+  }
+  .modal-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    border-radius: 0.625rem;
+    padding: 0 1.75rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    background: #B8A22A;
+    color: #111111;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(184,162,42,0.28);
+    width: 100%;
+    cursor: pointer;
+  }
+  .modal-cta:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 22px rgba(184,162,42,0.38);
+  }
+  .modal-cta:focus-visible {
+    outline: 2px solid #B8A22A;
+    outline-offset: 3px;
+  }
+
+  /* ── Mobile adjustments ── */
+  @media (max-width: 640px) {
+    .modal-overlay {
+      padding: 0.5rem;
+      align-items: flex-end;
+    }
+    .modal-panel {
+      max-height: calc(100svh - 0.5rem);
+      border-radius: 1.25rem 1.25rem 0 0;
+      max-width: 100%;
+    }
+    .modal-header {
+      padding: 1.25rem 1.25rem 0.875rem;
+    }
+    .modal-body {
+      padding: 1.25rem 1.25rem 2rem;
+    }
+    .modal-title {
+      font-size: 1.0625rem;
+    }
+  }
+</style>
+
+<script>
+  // ── Modal controller — no dependencies ──
+  (function () {
+    const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
+
+    function openModal(id: string) {
+      const overlay = document.getElementById(id);
+      if (!overlay) return;
+      overlay.style.display = 'flex';
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      // Focus first focusable
+      requestAnimationFrame(() => {
+        const first = overlay.querySelector<HTMLElement>(FOCUSABLE);
+        if (first) first.focus();
+      });
+    }
+
+    function closeModal(id: string) {
+      const overlay = document.getElementById(id);
+      if (!overlay) return;
+      overlay.style.display = 'none';
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      // Return focus to trigger
+      const trigger = document.querySelector<HTMLElement>(`[data-open-modal="${id}"]`);
+      if (trigger) trigger.focus();
+    }
+
+    // Open triggers
+    document.addEventListener('click', (e) => {
+      const target = (e.target as HTMLElement).closest<HTMLElement>('[data-open-modal]');
+      if (target) {
+        e.preventDefault();
+        openModal(target.dataset.openModal!);
+      }
+    });
+
+    // Close triggers (backdrop + X button)
+    document.addEventListener('click', (e) => {
+      const target = (e.target as HTMLElement).closest<HTMLElement>('[data-close-modal]');
+      if (target) {
+        const id = target.dataset.closeModal!;
+        // If it's the CTA link, navigate first then close
+        if (target.tagName === 'A') {
+          const interest = target.dataset.interest;
+          if (interest) {
+            // Pre-select interest in contact form
+            const select = document.getElementById('contact-interest') as HTMLSelectElement;
+            if (select) {
+              select.value = interest;
+              // Trigger change event for any listeners
+              select.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          }
+          closeModal(id);
+          // Navigation happens naturally via the href
+          return;
+        }
+        closeModal(id);
+      }
+    });
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      const open = document.querySelector<HTMLElement>('.modal-overlay[aria-hidden="false"]');
+      if (open) closeModal(open.id);
+    });
+
+    // Focus trap
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      const open = document.querySelector<HTMLElement>('.modal-overlay[aria-hidden="false"]');
+      if (!open) return;
+      const focusables = Array.from(open.querySelectorAll<HTMLElement>(FOCUSABLE));
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
+  })();
+</script>

@@ -120,18 +120,23 @@ export default function Header() {
 
       <div className="mx-auto max-w-7xl px-6 h-12 flex items-center justify-between">
 
-        {/* ── Logo ── */}
-        <a href="/" id="header-logo" className="flex items-center gap-2 group">
-          <span
-            className="text-xl font-bold tracking-tight"
-            style={scrolled ? { color: "#111111", fontFamily: fontJakarta } : { color: "#F4F4F4", fontFamily: fontJakarta }}
-          >
-            Blank<span style={{ color: "#B8A22A" }}>Space</span>
-          </span>
-          <div
-            className="size-1.5 rounded-full group-hover:scale-150 transition-transform duration-300"
-            style={{ background: "#B8A22A" }}
-          />
+        <a href="/" id="header-logo" className="flex items-center group">
+          {/* SVG logo: white wordmark + gold accent — visible on dark header */}
+          {!scrolled && (
+            <img
+              src="/images/brand/blankspace-logo.svg"
+              alt="BlankSpace"
+              className="h-7 w-auto transition-opacity duration-200 group-hover:opacity-80"
+            />
+          )}
+          {/* PNG logo: full color — visible on light scrolled header */}
+          {scrolled && (
+            <img
+              src="/images/brand/blankspace-logo.png"
+              alt="BlankSpace"
+              className="h-7 w-auto transition-opacity duration-200 group-hover:opacity-80"
+            />
+          )}
         </a>
 
         {/* ── Desktop Navigation ── */}
@@ -171,17 +176,6 @@ export default function Header() {
             onLeave={() => setIsStudioOpen(false)}
           />
 
-          {/* Blog */}
-          <a
-            href="/blog"
-            id="nav-blog"
-            className="text-sm font-medium transition-colors"
-            style={{ color: linkColor(scrolled), fontFamily: fontInter }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = linkHover(scrolled))}
-            onMouseLeave={(e) => (e.currentTarget.style.color = linkColor(scrolled))}
-          >
-            Blog
-          </a>
 
           {/* Contact */}
           <a
