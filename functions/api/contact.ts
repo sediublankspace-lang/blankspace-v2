@@ -87,7 +87,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   const htmlBody = `
 <table style="font-family:Arial,sans-serif;font-size:15px;color:#111;border-collapse:collapse;width:100%;max-width:600px">
   <tr><td colspan="2" style="background:#111111;padding:20px 24px">
-    <img src="https://blankspace.ro/images/brand/blankspace-logo-reverse.svg" alt="BlankSpace" style="height:28px;width:auto"/>
+    <img src="https://blankspace-v2.pages.dev/images/brand/blankspace-email-logo.png" alt="BlankSpace" width="180" style="display:block;width:180px;max-width:180px;height:auto;border:0;outline:none;text-decoration:none"/>
   </td></tr>
   <tr><td colspan="2" style="padding:20px 24px 4px;font-size:18px;font-weight:bold;color:#111">
     Solicitare nouă prin website
