@@ -1,4 +1,10 @@
 ---
+// BlankSpace coordinates (Single Source of Truth)
+const MAP_LAT = 45.671607;
+const MAP_LNG = 25.609301;
+const MAP_EMBED_URL = `https://maps.google.com/maps?q=${MAP_LAT},${MAP_LNG}&hl=ro&z=17&output=embed`;
+const MAP_EXTERNAL_URL = `https://maps.google.com/maps?q=${MAP_LAT},${MAP_LNG}`;
+
 const interestOptions = [
   "Design Interior",
   "3D Printing",
@@ -81,7 +87,7 @@ const interestOptions = [
           id="google-maps-container"
           class="mt-6 rounded-xl overflow-hidden relative flex flex-col justify-center items-center text-center p-5 transition-all duration-200"
           style="min-height: 220px; background: #FAF9F5; border: 1px solid #D9D6D1;"
-          data-map-src="https://maps.google.com/maps?q=Str.+13+Decembrie+nr.+127+Brasov+Romania&output=embed"
+          data-map-src={MAP_EMBED_URL}
         >
           {/* Placeholder state (rendered before consent / when rejected) */}
           <div id="google-maps-placeholder" class="flex flex-col items-center justify-center space-y-3 w-full">
@@ -109,7 +115,7 @@ const interestOptions = [
                 Permite harta
               </button>
               <a
-                href="https://maps.google.com/maps?q=Str.+13+Decembrie+nr.+127+Brasov+Romania"
+                href={MAP_EXTERNAL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="min-h-[38px] inline-flex items-center justify-center px-3.5 rounded-lg text-xs font-medium text-[#4B5563] hover:text-[#111111] hover:bg-[#EBE8E1] transition-colors border border-[#D9D6D1]"
