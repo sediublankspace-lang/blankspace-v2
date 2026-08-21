@@ -1,55 +1,53 @@
 ---
 const projects = [
   {
-    title: "Machetă Urbană Modulară",
-    course: "Design Interior / Imprimare 3D",
-    desc: "Un model detaliat la scară al unui cartier rezidențial sustenabil. Structurile clădirilor au fost debitate cu laser din acril și lemn de tei, iar fațadele complexe au fost printate 3D.",
-    author: "Grupa 3 de Cursanți",
-    specs: ["Debitare Laser", "Printare 3D PLA", "MDF"],
-    image: "https://images.unsplash.com/photo-1503387873255-3a4a2345e650?auto=format&fit=crop&w=600&q=80"
+    title: "Obiect de Design Interior",
+    category: "Design",
+    desc: "Piesă de mobilier decorativă proiectată și realizată în Studio, combinând estetica minimalistă cu materialele naturale.",
+    image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=600&q=80",
+    alt: "Proiect de design interior realizat la BlankSpace Studio Brașov"
   },
   {
-    title: "Scaun Birchwood Eco-Design",
-    course: "Design de produs",
-    desc: "Un scaun minimalist asamblat exclusiv prin îmbinări puzzle, fără șuruburi sau adezivi. Proiectat digital și debitat direct pe CNC din placaj de mesteacăn.",
-    author: "Proiect Individual de Absolvire",
-    specs: ["Frezare CNC", "Mesteacăn 18mm", "Finisaj Ulei"],
-    image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=600&q=80"
+    title: "Prototip Custom 3D",
+    category: "3D Printing",
+    desc: "Componentă tehnică personalizată, modelată în CAD și produsă prin imprimare 3D FDM cu materiale tehnice.",
+    image: "https://images.unsplash.com/photo-1503387873255-3a4a2345e650?auto=format&fit=crop&w=600&q=80",
+    alt: "Prototip imprimat 3D la BlankSpace Studio — servicii de prototipare Brașov"
   },
   {
-    title: "Sistem IoT de Monitorizare Mediu",
-    course: "Ateliere Creative / IoT",
-    desc: "Stație completă pentru monitorizarea aerului și temperaturii. Sistem ESP32, integrat într-o carcasă proiectată și printată 3D în laboratorul nostru.",
-    author: "Atelier Proiecte Speciale",
-    specs: ["ESP32", "Senzori Mediu", "Carcasă PETG"],
-    image: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=600&q=80"
+    title: "Proiect de Absolvire ICDL",
+    category: "Educație",
+    desc: "Portofoliu digital complet realizat de cursanți la finalul programului de competențe digitale ICDL România.",
+    image: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=600&q=80",
+    alt: "Cursuri competențe digitale ICDL România la BlankSpace Brașov — proiecte absolvire"
   }
 ];
 ---
 
-<section id="proiecte" class="relative py-24 md:py-32" style="background: #FFFFFF; border-top: 1px solid #D9D6D1;">
+<section id="proiecte" class="relative py-20 md:py-28" style="background: #FFFFFF; border-top: 1px solid #D9D6D1;">
   <div class="mx-auto max-w-7xl px-6">
 
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-20 gap-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 md:mb-16 gap-6">
       <div class="max-w-2xl">
         <div class="flex items-center gap-3 mb-5">
           <span class="inline-block w-8 h-[2px]" style="background: #B8A22A;"></span>
-          <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color: #B8A22A;">
-            Rezultate tangibile
+          <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color: #B8A22A; font-family: 'Plus Jakarta Sans', sans-serif;">
+            Portofoliu
           </span>
         </div>
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight" style="color: #111111; font-family: 'Playfair Display', Georgia, serif;">
-          Proiecte realizate în spațiul nostru
+        <h2 class="heading-2" style="color: #111111;">
+          Proiecte selectate
         </h2>
-        <p class="mt-4 text-base md:text-lg leading-relaxed" style="color: #5A5A5A;">
-          O mostră din lucrările cursanților și membrilor laboratorului. Ideile devin realitate cu instrumentele potrivite.
+        <p class="mt-4 text-base leading-relaxed body-text" style="color: #4B5563;">
+          O parte din proiectele realizate la BlankSpace — în cursuri, în Studio și prin colaborări.
         </p>
       </div>
       <div>
         <a
           href="/proiecte"
+          id="projects-all-link"
           class="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors group"
-          style="color: #B8A22A;"
+          style="color: #B8A22A; font-family: 'Plus Jakarta Sans', sans-serif;"
           onmouseover="this.style.opacity='0.75';"
           onmouseout="this.style.opacity='1';"
         >
@@ -74,45 +72,29 @@ const projects = [
           <div class="aspect-[16/10] relative overflow-hidden" style="border-bottom: 1px solid #D9D6D1;">
             <img
               src={proj.image}
-              alt={proj.title}
+              alt={proj.alt}
               class="absolute inset-0 size-full object-cover group-hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
-            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(17,17,17,0.65) 0%, transparent 55%);"></div>
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(17,17,17,0.55) 0%, transparent 55%);"></div>
 
-            {/* Course badge */}
+            {/* Category badge */}
             <div class="absolute top-4 left-4">
               <span class="text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full"
-                    style="background: rgba(17,17,17,0.82); color: #B8A22A; border: 1px solid rgba(184,162,42,0.3); backdrop-filter: blur(8px);">
-                {proj.course}
+                    style="background: rgba(17,17,17,0.82); color: #B8A22A; border: 1px solid rgba(184,162,42,0.3); backdrop-filter: blur(8px); font-family: 'Plus Jakarta Sans', sans-serif;">
+                {proj.category}
               </span>
-            </div>
-
-            {/* Author badge */}
-            <div class="absolute bottom-4 left-4 right-4">
-              <div class="text-[10px] font-mono px-2 py-1 rounded inline-block"
-                   style="background: rgba(17,17,17,0.72); color: rgba(244,244,244,0.85); backdrop-filter: blur(4px);">
-                {proj.author}
-              </div>
             </div>
           </div>
 
           {/* Content */}
           <div class="p-6 flex flex-col flex-grow space-y-3">
-            <h3 class="text-lg font-semibold transition-colors duration-200 group-hover:text-[#B8A22A]" style="color: #111111;">
+            <h3 class="heading-4 font-semibold transition-colors duration-200 group-hover:text-[#B8A22A]" style="color: #111111;">
               {proj.title}
             </h3>
-            <p class="text-sm leading-relaxed flex-grow" style="color: #5A5A5A;">
+            <p class="text-sm leading-relaxed flex-grow body-text" style="color: #4B5563;">
               {proj.desc}
             </p>
-            <div class="flex flex-wrap gap-1.5 pt-4" style="border-top: 1px solid #D9D6D1;">
-              {proj.specs.map((spec) => (
-                <span class="text-[11px] font-medium px-2.5 py-1 rounded-md"
-                      style="background: #E8E5E0; color: #5A5A5A;">
-                  {spec}
-                </span>
-              ))}
-            </div>
           </div>
         </article>
       ))}

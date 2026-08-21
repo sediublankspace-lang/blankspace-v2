@@ -1,64 +1,77 @@
 ---
-const domains = [
+const activities = [
   {
-    title: "Design Interior",
-    desc: "Învață să configurezi spații ergonomice și estetice. Teoria culorilor, studiul luminii și modelare 3D cu programe CAD profesionale.",
-    href: "/cursuri/design-interior",
+    id: "design-interior",
+    title: "Curs Design Interior",
+    tagline: "curs design interior Brașov",
+    badge: "Curs autorizat · program de specializare",
+    desc: "Învață să analizezi spații, să elaborezi planuri de amenajare și să prezinți proiecte de design interior cu instrumente profesionale.",
+    cta: "Vezi detalii",
+    href: "/documents/curs-design-interior.pdf",
+    chips: null,
     icon: `<svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>`
   },
   {
-    title: "Imprimare 3D",
-    desc: "Procesul complet de fabricare digitală: imprimante FDM și SLA, alegerea materialelor (PLA, PETG, rășini), slicing și finisare fizică.",
-    href: "/cursuri/imprimare-3d",
+    id: "imprimare-3d",
+    title: "Curs Imprimare 3D",
+    tagline: "curs imprimare 3D Brașov",
+    badge: null,
+    desc: "Un curs practic pentru pasionați, începători și cei care vor să descopere imprimarea 3D, de la pregătirea modelului până la realizarea obiectului fizic. Posibilitate de certificare ICDL 3D Printing.",
+    cta: "Vezi detalii",
+    href: "/documents/curs-imprimare-3d.pdf",
+    chips: null,
     icon: `<svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>`
   },
   {
-    title: "ECDL",
-    desc: "Certificarea standard pentru utilizarea calculatorului, recunoscută internațional. Pregătire pentru baze de date, calcul tabelar și securitate.",
-    href: "/cursuri/ecdl",
+    id: "icdl",
+    title: "Cursuri de competențe digitale ICDL",
+    tagline: "cursuri ICDL Brașov competențe digitale",
+    badge: null,
+    desc: "Pregătire și certificare internațională a competențelor digitale.",
+    cta: "Vezi detalii",
+    href: "/documents/competente-digitale-icdl.pdf",
+    chips: ["ICDL CORE", "PROFIL BAC", "PROFIL DIDACTIC", "AI", "Alte module"],
     icon: `<svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>`
   },
   {
-    title: "Design de produs",
-    desc: "De la concept la execuție fizică. Metodologia designului de produs, ergonomie, randare realistă și tehnici de prototipare în laborator.",
-    href: "/cursuri/design-de-produs",
-    icon: `<svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122l9.37-9.37m0 0l-1.01-1.01a2.25 2.25 0 00-3.182 0l-10.01 10.01a2.25 2.25 0 00-.596 1.006l-.73 2.922a.75.75 0 00.916.916l2.922-.73a2.25 2.25 0 001.006-.596l10.01-10.01a2.25 2.25 0 000-3.182l-1.01-1.01" /></svg>`
-  },
-  {
-    title: "Ateliere creative",
-    desc: "Dezvoltare practică pentru copii și adolescenți. Introducere în robotică, circuite Arduino și elemente de fabricație digitală distractivă.",
-    href: "/cursuri/ateliere-creative",
-    icon: `<svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" /></svg>`
+    id: "certificare-icdl",
+    title: "Centru de testare ICDL România",
+    tagline: "centru de testare ICDL Brașov",
+    badge: null,
+    desc: "Susține examenele ICDL într-un centru autorizat. Îți oferim infrastructura tehnică și un mediu organizat pentru sesiunile de testare și certificare.",
+    cta: "Vezi detalii",
+    href: "/documents/centru-testare-icdl.pdf",
+    chips: null,
+    icon: `<svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" /></svg>`
   }
 ];
 ---
 
-<section id="domenii" class="relative py-24 md:py-32" style="background: #FFFFFF; border-top: 1px solid #D9D6D1;">
+<section id="activitati" class="relative py-14 md:py-20" style="background: #FFFFFF; border-top: 1px solid #D9D6D1;" aria-labelledby="activitati-heading">
   <div class="mx-auto max-w-7xl px-6">
 
     {/* Section header */}
-    <div class="max-w-3xl mb-16 md:mb-20">
+    <div class="max-w-3xl mb-14 md:mb-16">
       <div class="flex items-center gap-3 mb-5">
         <span class="inline-block w-8 h-[2px]" style="background: #B8A22A;"></span>
-        <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color: #B8A22A;">
+        <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color: #B8A22A; font-family: 'Plus Jakarta Sans', sans-serif;">
           Ce poți studia
         </span>
       </div>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-balance" style="color: #111111; font-family: 'Playfair Display', Georgia, serif;">
-        Domeniile noastre principale de studiu
+      <h2 id="activitati-heading" class="heading-2" style="color: #111111;">
+        Activitățile noastre principale
       </h2>
-      <p class="mt-4 text-base md:text-lg leading-relaxed" style="color: #5A5A5A;">
-        De la primele noțiuni digitale la proiectare tridimensională și prototipuri fizice realizate în laboratorul nostru.
+      <p class="mt-4 text-base leading-relaxed body-text" style="color: #4B5563;">
+        Cursuri practice, certificări recunoscute și experiențe de învățare aplicate — pentru copii, adulți și organizații.
       </p>
     </div>
 
     {/* Cards grid */}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {domains.map((dom, idx) => (
-        <a
-          href={dom.href}
-          id={`domain-card-${idx}`}
-          class="domain-card group relative flex flex-col justify-between rounded-2xl p-7 transition-all duration-300 cursor-pointer"
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {activities.map((act) => (
+        <div
+          id={`activity-card-${act.id}`}
+          class="activity-card group relative flex flex-col justify-between rounded-2xl p-7 transition-all duration-300"
           style="background: #F4F4F4; border: 1px solid #D9D6D1;"
           onmouseover="this.style.borderColor='rgba(184,162,42,0.45)'; this.style.boxShadow='0 12px 40px rgba(0,0,0,0.07)'; this.style.background='#FFFFFF';"
           onmouseout="this.style.borderColor='#D9D6D1'; this.style.boxShadow='none'; this.style.background='#F4F4F4';"
@@ -69,37 +82,70 @@ const domains = [
 
           <div>
             {/* Icon container */}
-            <div class="size-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-300"
+            <div class="size-12 rounded-xl flex items-center justify-center mb-5 transition-all duration-300"
                  style="background: rgba(184,162,42,0.07); border: 1px solid rgba(184,162,42,0.18); color: #B8A22A;"
-                 set:html={dom.icon}>
+                 set:html={act.icon}>
             </div>
 
-            <h3 class="text-lg font-semibold mb-3 transition-colors duration-200 group-hover:text-[#B8A22A]" style="color: #111111;">
-              {dom.title}
+            {/* Optional badge */}
+            {act.badge && (
+              <span class="inline-block mb-3 px-2.5 py-1 rounded-md text-[11px] font-semibold tracking-wide"
+                    style="background: rgba(184,162,42,0.09); color: #8A7020; border: 1px solid rgba(184,162,42,0.2); font-family: 'Plus Jakarta Sans', sans-serif;">
+                {act.badge}
+              </span>
+            )}
+
+            <h3 class="heading-3 mb-2 transition-colors duration-200 group-hover:text-[#B8A22A]" style="color: #111111;">
+              {act.title}
             </h3>
 
-            <p class="text-sm leading-relaxed" style="color: #5A5A5A;">
-              {dom.desc}
+            {/* Hidden SEO tagline */}
+            <p class="sr-only">{act.tagline}</p>
+
+            <p class="text-sm leading-relaxed body-text" style="color: #4B5563;">
+              {act.desc}
             </p>
+
+            {/* Optional module chips */}
+            {act.chips && (
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                {act.chips.map((chip: string) => (
+                  <span class="inline-block px-2.5 py-1 rounded-full text-[11px] font-medium"
+                        style="background: #F0EDE8; color: #5A5A5A; border: 1px solid #D9D6D1; font-family: 'Inter', sans-serif;">
+                    {chip}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
 
-          <div class="flex items-center gap-1.5 text-xs font-semibold mt-7 pt-5 transition-all duration-200"
-               style="color: #B8A22A; border-top: 1px solid #D9D6D1;">
-            Află detalii
-            <svg class="size-3.5 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
+          <div class="flex items-center gap-1.5 text-sm font-semibold mt-6 pt-5 transition-all duration-200"
+               style="border-top: 1px solid #D9D6D1;">
+            <a
+              href={act.href}
+              class="inline-flex items-center gap-1.5 min-h-[44px] transition-colors duration-200 btn-text focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A22A] focus-visible:ring-offset-2 rounded"
+              style="color: #B8A22A; font-size: 0.875rem;"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${act.cta} — ${act.title}`}
+            >
+              {act.cta}
+              <svg class="size-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
           </div>
-        </a>
+        </div>
       ))}
     </div>
 
     {/* Bottom link */}
-    <div class="mt-12 text-center">
+    <div class="mt-10 text-center">
       <a
         href="/cursuri"
+        id="activities-all-btn"
         class="inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-all duration-200 hover:scale-[1.02]"
-        style="border: 1px solid #D9D6D1; color: #111111; background: #FFFFFF;"
+        style="border: 1px solid #D9D6D1; color: #111111; background: #FFFFFF; font-family: 'Plus Jakarta Sans', sans-serif;"
         onmouseover="this.style.borderColor='#B8A22A'; this.style.color='#B8A22A';"
         onmouseout="this.style.borderColor='#D9D6D1'; this.style.color='#111111';"
       >

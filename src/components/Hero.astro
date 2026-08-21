@@ -1,7 +1,10 @@
 ---
 ---
 
-<section class="relative min-h-screen flex flex-col justify-center overflow-hidden" style="background-color: #111111;">
+<section
+  class="relative min-h-screen flex flex-col justify-center overflow-hidden"
+  style="background-color: #111111;"
+  aria-label="Secțiunea principală BlankSpace">
 
   {/* Deep texture overlay — subtle grain */}
   <div class="hero-grain absolute inset-0 -z-10 opacity-[0.04]"></div>
@@ -16,76 +19,52 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
       {/* ── Left Column — Text Content ── */}
-      <div class="space-y-9">
+      <div class="space-y-8">
 
         {/* Live Badge */}
         <div class="animate-fade-in-up inline-flex items-center gap-2.5 rounded-full px-4 py-1.5"
              style="border: 1px solid rgba(184,162,42,0.25); background: rgba(184,162,42,0.07);">
           <span class="size-1.5 rounded-full animate-pulse" style="background:#B8A22A;"></span>
-          <span class="text-xs font-semibold tracking-[0.12em] uppercase" style="color: #B8A22A;">
-            Porțile sunt deschise · Sesiunea de vară 2026
+          <span class="text-xs font-semibold tracking-[0.12em] uppercase" style="color: #B8A22A; font-family: 'Plus Jakarta Sans', sans-serif;">
+            Sesiunea de toamnă 2026 · Înscrierea este deschisă
           </span>
         </div>
 
-        {/* Main Headline */}
-        <div class="animate-fade-in-up delay-100 space-y-2">
-          <h1 class="text-[2.6rem] md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.07]" style="color: #F4F4F4; font-family: 'Playfair Display', Georgia, serif;">
-            Discover, create<br />
-            and innovate your<br />
-            <span style="color: #B8A22A;">BlankSpace.</span>
+        {/* Main Headline — H1 unic pe pagină */}
+        <div class="animate-fade-in-up delay-100 space-y-3">
+          <h1 class="hero-title" style="color: #F4F4F4;">
+            Învață. Creează. <span style="color: #B8A22A;">Aplică.</span>
           </h1>
         </div>
 
-        {/* Romanian Tagline */}
-        <p class="animate-fade-in-up delay-200 text-xl md:text-2xl font-light tracking-wide" style="color: #D9D6D1;">
-          Învață prin practică. Creează cu tehnologia.
-        </p>
-
         {/* Subtitle */}
-        <p class="animate-fade-in-up delay-300 text-base md:text-lg leading-relaxed max-w-lg" style="color: #8A8A8A;">
-          Cursuri și experiențe educaționale în design, tehnologie și competențe digitale pentru copii, adulți și organizații.
+        <p class="animate-fade-in-up delay-200 text-base md:text-lg leading-relaxed max-w-xl" style="color: #D9D6D1; font-family: 'Inter', sans-serif;">
+          Cursuri practice, formare autorizată, certificări ICDL și servicii 3D — într-un studio în care ideile se transformă în competențe și proiecte reale.
         </p>
 
         {/* CTA Buttons */}
         <div class="animate-fade-in-up delay-400 flex flex-col sm:flex-row items-start gap-4">
           <a
-            href="#domenii"
+            href="#activitati"
             id="hero-cta-primary"
-            class="inline-flex h-12 items-center justify-center rounded-lg px-7 font-semibold text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] group/btn"
+            class="inline-flex h-12 items-center justify-center rounded-lg px-7 font-semibold text-base transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] group/btn btn-text"
             style="background: #B8A22A; color: #111111; box-shadow: 0 4px 24px rgba(184,162,42,0.28);"
           >
-            Vezi cursurile
+            Descoperă cursurile
             <svg class="ml-2 size-4 group-hover/btn:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
           </a>
           <a
-            href="#laborator"
+            href="#studio"
             id="hero-cta-secondary"
-            class="inline-flex h-12 items-center justify-center rounded-lg px-7 font-medium text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            class="inline-flex h-12 items-center justify-center rounded-lg px-7 font-medium text-base transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] btn-text"
             style="border: 1px solid rgba(217,214,209,0.25); color: #D9D6D1; background: rgba(255,255,255,0.04);"
           >
-            Descoperă laboratorul
+            Explorează Studio 3D
           </a>
         </div>
 
-        {/* Trust metrics */}
-        <div class="animate-fade-in-up delay-500 flex items-center gap-8 pt-5" style="border-top: 1px solid rgba(255,255,255,0.07);">
-          <div class="text-center">
-            <div class="text-2xl font-bold tracking-tight" style="color: #B8A22A; font-family: 'Playfair Display', serif;">15+</div>
-            <div class="text-xs mt-0.5 tracking-wide" style="color: #5A5A5A;">Echipamente</div>
-          </div>
-          <div class="h-8 w-px" style="background: rgba(255,255,255,0.08);"></div>
-          <div class="text-center">
-            <div class="text-2xl font-bold tracking-tight" style="color: #B8A22A; font-family: 'Playfair Display', serif;">100%</div>
-            <div class="text-xs mt-0.5 tracking-wide" style="color: #5A5A5A;">Practică reală</div>
-          </div>
-          <div class="h-8 w-px" style="background: rgba(255,255,255,0.08);"></div>
-          <div class="text-center">
-            <div class="text-2xl font-bold tracking-tight" style="color: #B8A22A; font-family: 'Playfair Display', serif;">1:1</div>
-            <div class="text-xs mt-0.5 tracking-wide" style="color: #5A5A5A;">Mentorat</div>
-          </div>
-        </div>
       </div>
 
       {/* ── Right Column — Cinematic Image ── */}
@@ -97,9 +76,12 @@
 
           <img
             src="https://images.unsplash.com/photo-1562408590-e32931084e23?auto=format&fit=crop&w=900&q=85"
-            alt="Laborator digital BlankSpace — spațiu educațional premium de design și tehnologie"
+            alt="BlankSpace Brașov — curs design interior, imprimare 3D și competențe digitale ICDL"
             class="absolute inset-0 size-full object-cover"
             loading="eager"
+            fetchpriority="high"
+            width="900"
+            height="1125"
           />
 
           {/* Cinematic gradient overlay */}
@@ -108,16 +90,6 @@
           {/* Top edge subtle vignette */}
           <div class="absolute top-0 left-0 right-0 h-20" style="background: linear-gradient(to bottom, rgba(17,17,17,0.25), transparent);"></div>
 
-          {/* Floating label — bottom */}
-          <div class="absolute bottom-5 left-5 right-5">
-            <div class="rounded-xl px-5 py-4" style="background: rgba(17,17,17,0.82); backdrop-filter: blur(14px); border: 1px solid rgba(184,162,42,0.18);">
-              <div class="flex items-center gap-2 mb-1.5">
-                <span class="size-1.5 rounded-full" style="background: #B8A22A;"></span>
-                <span class="text-[10px] font-bold tracking-[0.16em] uppercase" style="color: #B8A22A;">Laborator deschis</span>
-              </div>
-              <p class="text-sm font-medium leading-snug" style="color: #F4F4F4;">De la idee digitală, la obiect fizic tangibil</p>
-            </div>
-          </div>
 
           {/* Corner accent — top left */}
           <div class="absolute top-0 left-0 w-12 h-[2px]" style="background: #B8A22A;"></div>
@@ -134,11 +106,39 @@
       </div>
 
     </div>
+
+    {/* Credibilitate — 3 iteme centrate sub hero grid */}
+    <div class="animate-fade-in-up delay-500 flex flex-wrap items-start justify-center gap-x-8 gap-y-6 md:gap-x-14 pt-10 mt-4" style="border-top: 1px solid rgba(255,255,255,0.07);">
+
+      {/* Item 1: ICDL */}
+      <div class="text-center max-w-[140px] sm:max-w-none">
+        <div class="text-base font-bold tracking-tight" style="color: #B8A22A; font-family: 'Plus Jakarta Sans', sans-serif;">ICDL</div>
+        <div class="text-[11px] mt-1 leading-snug" style="color: #5A5A5A; font-family: 'Inter', sans-serif;">Centru de testare acreditat</div>
+      </div>
+
+      <div class="hidden sm:block h-10 w-px self-center" style="background: rgba(255,255,255,0.08);"></div>
+
+      {/* Item 2: Formare autorizată */}
+      <div class="text-center max-w-[160px] sm:max-w-none">
+        <div class="text-base font-bold tracking-tight" style="color: #B8A22A; font-family: 'Plus Jakarta Sans', sans-serif;">Formare autorizată</div>
+        <div class="text-[11px] mt-1 leading-snug" style="color: #5A5A5A; font-family: 'Inter', sans-serif;">Cursuri autorizate în sistemul național</div>
+      </div>
+
+      <div class="hidden sm:block h-10 w-px self-center" style="background: rgba(255,255,255,0.08);"></div>
+
+      {/* Item 3: Studio 3D */}
+      <div class="text-center max-w-[160px] sm:max-w-none">
+        <div class="text-base font-bold tracking-tight" style="color: #B8A22A; font-family: 'Plus Jakarta Sans', sans-serif;">Studio 3D</div>
+        <div class="text-[11px] mt-1 leading-snug" style="color: #5A5A5A; font-family: 'Inter', sans-serif;">Scanare obiecte · Modelare · Imprimare</div>
+      </div>
+
+    </div>
+
   </div>
 
-  {/* Bottom transition fade to light */}
-  <div class="absolute bottom-0 left-0 right-0 h-28 pointer-events-none"
-       style="background: linear-gradient(to top, #F4F4F4, transparent);"></div>
+  {/* Bottom transition fade to light — reduced height for tighter spacing */}
+  <div class="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
+       style="background: linear-gradient(to top, #F4F4F4 10%, transparent);"></div>
 </section>
 
 <style>
@@ -164,7 +164,7 @@
   .delay-400 { animation-delay: 400ms; }
   .delay-500 { animation-delay: 500ms; }
 
-  /* Subtle noise texture — keeps dark section from feeling flat */
+  /* Subtle noise texture */
   .hero-grain {
     background-image:
       url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cg fill='%23fff' fill-opacity='1'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3Ccircle cx='31' cy='31' r='1'/%3E%3C/g%3E%3C/svg%3E");

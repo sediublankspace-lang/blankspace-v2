@@ -1,30 +1,33 @@
 ---
+// Shown on homepage — add others back when ready
 const partners = [
-  { name: "FABRICATOR", style: "font-black tracking-widest text-lg" },
-  { name: "Univ. Arhitectură & Design", style: "font-serif italic text-sm font-semibold tracking-tight" },
-  { name: "STUDIO DESIGN", style: "font-light tracking-loose text-base" },
-  { name: "PROTO LAB", style: "font-mono font-bold text-base" },
-  { name: "ECDL Romania", style: "font-sans font-bold tracking-tight text-base" }
+  { name: "ICDL România", style: "font-sans font-bold tracking-tight text-base" },
+  // { name: "FABRICATOR",                 style: "font-black tracking-widest text-lg" },
+  // { name: "Univ. Arhitectură & Design", style: "font-serif italic text-sm font-semibold tracking-tight" },
+  // { name: "STUDIO DESIGN",              style: "font-light tracking-loose text-base" },
+  // { name: "PROTO LAB",                  style: "font-mono font-bold text-base" },
 ];
 ---
 
-<section class="relative py-14 md:py-20" style="background: #FAFAF8; border-top: 1px solid #D9D6D1;">
-  <div class="mx-auto max-w-7xl px-6">
+<section id="parteneri" class="relative py-16 md:py-24" style="background: #FAFAF8; border-top: 1px solid #D9D6D1;" aria-labelledby="parteneri-heading">
+  <div class="mx-auto max-w-5xl px-6">
 
-    <div class="text-center mb-10">
-      <p class="text-[10px] font-semibold tracking-[0.22em] uppercase" style="color: #AAA39A;">
-        Parteneri educaționali și tehnologici
-      </p>
-    </div>
+    {/* Label */}
+    <p id="parteneri-heading" class="text-center mb-10 md:mb-14 text-[10px] font-semibold tracking-[0.22em] uppercase"
+       style="color: #AAA39A; font-family: 'Plus Jakarta Sans', sans-serif;">
+      Parteneri educaționali și tehnologici
+    </p>
 
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
+    {/* Partners row — wraps cleanly on mobile */}
+    <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-8 md:gap-x-16 md:gap-y-6">
       {partners.map((p, idx) => (
         <div
           id={`partner-${idx}`}
-          class={`select-none cursor-default py-2 transition-all duration-400 ${p.style}`}
-          style="color: #BEBAB3; opacity: 0.5;"
-          onmouseover="this.style.color='#B8A22A'; this.style.opacity='1';"
-          onmouseout="this.style.color='#BEBAB3'; this.style.opacity='0.5';"
+          class={`partner-item select-none cursor-default transition-all duration-300 ${p.style}`}
+          style="color: #BEBAB3; opacity: 0.55; filter: grayscale(1); min-width: 8rem; text-align: center;"
+          onmouseover="this.style.color='#B8A22A'; this.style.opacity='1'; this.style.filter='grayscale(0)';"
+          onmouseout="this.style.color='#BEBAB3'; this.style.opacity='0.55'; this.style.filter='grayscale(1)';"
+          aria-label={p.name}
         >
           {p.name}
         </div>
@@ -33,3 +36,11 @@ const partners = [
 
   </div>
 </section>
+
+<style>
+  .partner-item {
+    line-height: 1.2;
+    padding: 0.25rem 0;
+  }
+</style>
+
