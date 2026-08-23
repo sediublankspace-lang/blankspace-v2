@@ -114,18 +114,28 @@
         {/* Category 2: Conținut Extern */}
         <div class="p-4 rounded-xl bg-[#FAF9F5] border border-[#E8E5E0] space-y-2">
           <div class="flex items-center justify-between gap-4">
-            <label for="cookie-toggle-external" class="text-sm font-bold text-[#111111] cursor-pointer" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+            <span
+              id="cookie-toggle-external-label"
+              class="text-sm font-bold text-[#111111] cursor-pointer select-none"
+              style="font-family: 'Plus Jakarta Sans', sans-serif;"
+            >
               Conținut extern
-            </label>
-            <div class="relative inline-flex items-center cursor-pointer shrink-0">
-              <input
-                type="checkbox"
-                id="cookie-toggle-external"
-                class="sr-only peer"
-                aria-label="Permite conținut extern (Google Maps)"
-              />
-              <div class="w-11 h-6 bg-[#D9D6D1] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[#B8A22A] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-[#D9D6D1] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#B8A22A]"></div>
-            </div>
+            </span>
+            <button
+              type="button"
+              id="cookie-toggle-external"
+              role="switch"
+              aria-checked="false"
+              aria-labelledby="cookie-toggle-external-label"
+              class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A22A] focus-visible:ring-offset-2 bg-[#D9D6D1]"
+            >
+              <span class="sr-only">Permite conținut extern (Google Maps)</span>
+              <span
+                id="cookie-toggle-external-thumb"
+                aria-hidden="true"
+                class="pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow-sm ring-0 transition-transform duration-200 ease-in-out transform translate-x-0"
+              ></span>
+            </button>
           </div>
           <p class="text-xs text-[#4B5563] leading-relaxed body-text">
             Permite încărcarea serviciilor furnizate de terți, precum Google Maps. Acești furnizori pot utiliza cookie-uri sau tehnologii similare.
@@ -215,9 +225,40 @@
 
   const modal           = document.getElementById('cookie-settings-modal');
   const modalCloseBtn   = document.getElementById('cookie-settings-close-btn');
-  const toggleExternal  = document.getElementById('cookie-toggle-external') as HTMLInputElement | null;
+  const toggleExternalBtn   = document.getElementById('cookie-toggle-external');
+  const toggleExternalThumb = document.getElementById('cookie-toggle-external-thumb');
+  const toggleExternalLabel = document.getElementById('cookie-toggle-external-label');
   const modalSaveBtn    = document.getElementById('cookie-modal-save-btn');
   const modalAcceptBtn  = document.getElementById('cookie-modal-accept-btn');
+
+  let currentToggleState = false;
+
+  function updateToggleUI(enabled: boolean) {
+    currentToggleState = enabled;
+    if (toggleExternalBtn) {
+      toggleExternalBtn.setAttribute('aria-checked', String(enabled));
+      if (enabled) {
+        toggleExternalBtn.classList.remove('bg-[#D9D6D1]');
+        toggleExternalBtn.classList.add('bg-[#B8A22A]');
+      } else {
+        toggleExternalBtn.classList.remove('bg-[#B8A22A]');
+        toggleExternalBtn.classList.add('bg-[#D9D6D1]');
+      }
+    }
+    if (toggleExternalThumb) {
+      if (enabled) {
+        toggleExternalThumb.classList.remove('translate-x-0');
+        toggleExternalThumb.classList.add('translate-x-5');
+      } else {
+        toggleExternalThumb.classList.remove('translate-x-5');
+        toggleExternalThumb.classList.add('translate-x-0');
+      }
+    }
+  }
+
+  function toggleSwitch() {
+    updateToggleUI(!currentToggleState);
+  }
 
   // ── BANNER CONTROLS ───────────────────────────────────────────────────────
   function showBanner() {
@@ -245,9 +286,7 @@
     if (!modal) return;
     previousActiveElement = document.activeElement as HTMLElement | null;
     const current = getStoredPreferences();
-    if (toggleExternal) {
-      toggleExternal.checked = current ? current.externalContent : false;
-    }
+    updateToggleUI(current ? current.externalContent : false);
     modal.style.display = 'flex';
     requestAnimationFrame(() => {
       modal.classList.remove('opacity-0', 'pointer-events-none');
@@ -281,6 +320,21 @@
   }
 
   // ── EVENT LISTENERS ───────────────────────────────────────────────────────
+
+  // Toggle Switch Actions (Click & Label click)
+  if (toggleExternalBtn) {
+    toggleExternalBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleSwitch();
+    });
+  }
+
+  if (toggleExternalLabel) {
+    toggleExternalLabel.addEventListener('click', () => {
+      toggleSwitch();
+      toggleExternalBtn?.focus();
+    });
+  }
 
   // Banner Actions
   if (bannerRejectBtn) {
@@ -318,8 +372,7 @@
 
   if (modalSaveBtn) {
     modalSaveBtn.addEventListener('click', () => {
-      const external = toggleExternal ? toggleExternal.checked : false;
-      savePreferences(external);
+      savePreferences(currentToggleState);
       closeModal();
       hideBanner();
     });
@@ -327,8 +380,8 @@
 
   if (modalAcceptBtn) {
     modalAcceptBtn.addEventListener('click', () => {
+      updateToggleUI(true);
       savePreferences(true);
-      if (toggleExternal) toggleExternal.checked = true;
       closeModal();
       hideBanner();
     });
