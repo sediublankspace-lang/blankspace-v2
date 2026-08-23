@@ -1,8 +1,8 @@
+/* BlankSpace launch visual design is approved and locked. Do not modify fonts, colors, shades, spacing or visual styling unless explicitly requested. */
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/plus-jakarta-sans";
-@import "@fontsource-variable/inter";
+@import "@fontsource-variable/geist";
 
 @custom-variant dark (&:is(.dark *));
 
