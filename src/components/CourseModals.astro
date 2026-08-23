@@ -11,7 +11,7 @@
 
 <div id="course-modals-root" aria-live="polite">
 
-  <!-- ── Modal: Design Interior ── (DO NOT MODIFY) -->
+  <!-- ── Modal: Design Interior ── -->
   <div
     id="modal-design-interior"
     role="dialog"
@@ -23,9 +23,12 @@
     style="display:none;"
   >
     <div class="modal-backdrop" data-close-modal="modal-design-interior"></div>
-    <div class="modal-panel" role="document">
+    <div class="modal-panel" role="document" tabindex="-1">
       <div class="modal-header">
-        <h2 id="modal-di-title" class="modal-title">Curs Design Interior</h2>
+        <div class="modal-header-text">
+          <h2 id="modal-di-title" class="modal-title">Curs Design Interior</h2>
+          <p class="modal-subtitle">De la primele măsurători și desen tehnic până la proiectarea 2D/3D și dezvoltarea unui proiect complet de amenajare.</p>
+        </div>
         <button class="modal-close" aria-label="Închide fereastra" data-close-modal="modal-design-interior">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="size-5" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
@@ -34,43 +37,281 @@
       </div>
 
       <div class="modal-body">
-        <span class="modal-badge">Curs autorizat · program de specializare</span>
 
-        <div class="modal-section">
-          <h3 class="modal-section-title">Despre curs</h3>
-          <p>Cursul de Design Interior de la BlankSpace din Brașov oferă o pregătire practică și aplicată în planificarea, amenajarea și prezentarea spațiilor. Participanții lucrează cu instrumente profesionale și dezvoltă proiecte reale pe parcursul cursului.</p>
+        <!-- Quick info -->
+        <div class="quick-info-grid" aria-label="Informații rapide curs design interior">
+          <div class="quick-info-item">
+            <span class="quick-info-label">Durată</span>
+            <span class="quick-info-value">Aprox. 3 luni</span>
+          </div>
+          <div class="quick-info-item">
+            <span class="quick-info-label">Structură</span>
+            <span class="quick-info-value">2 module</span>
+          </div>
+          <div class="quick-info-item">
+            <span class="quick-info-label">Format</span>
+            <span class="quick-info-value">Fizic · Brașov</span>
+          </div>
+          <div class="quick-info-item">
+            <span class="quick-info-label">Program</span>
+            <span class="quick-info-value">Stabilit cu grupa</span>
+          </div>
         </div>
 
+        <!-- Main Commercial Section -->
         <div class="modal-section">
-          <h3 class="modal-section-title">Cui se adresează</h3>
-          <p>Persoanelor care doresc să înceapă o carieră în design interior, celor care vor să-și amenajeze propriile spații cu competențe solide, sau celor care vor să înțeleagă principiile vizuale și tehnice ale amenajărilor interioare.</p>
+          <h3 class="modal-section-title">Alege parcursul potrivit</h3>
+
+          <div class="outcome-cards">
+            <!-- Card 1: Modul I -->
+            <div class="outcome-card">
+              <div class="outcome-card__header">
+                <div>
+                  <span class="outcome-card__badge">MODUL I</span>
+                  <h4 class="outcome-card__title">Bazele designului interior + proiectare 2D</h4>
+                </div>
+                <div class="outcome-card__price">
+                  4.800 lei
+                </div>
+              </div>
+
+              <p class="outcome-card__duration">10 sesiuni × 4 ore + activitate practică individuală</p>
+
+              <div class="outcome-highlight-box">
+                <span class="outcome-highlight-label">La final</span>
+                <div class="outcome-cert-title">Certificare ICDL 2D Design</div>
+                <p class="outcome-supporting-text">
+                  Prețul Modulului I include pregătirea pentru ICDL 2D Design, seria unică ICDL dacă este necesară și o examinare ICDL 2D Design. Certificarea se obține după promovarea examenului. Eventualele reexaminări se achită separat.
+                </p>
+              </div>
+
+              <div class="outcome-card__body">
+                <ul class="outcome-list">
+                  <li>bazele designului, compoziției și organizării spațiului;</li>
+                  <li>materiale, culoare, lumină și mobilier;</li>
+                  <li>măsurători, releveu și desen tehnic;</li>
+                  <li>moodboard și dezvoltarea conceptului;</li>
+                  <li>proiectare și redactare digitală 2D / CAD.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Card 2: Program complet -->
+            <div class="outcome-card outcome-card--featured">
+              <div class="outcome-card__header">
+                <div>
+                  <span class="outcome-card__badge outcome-card__badge--gold">PROGRAM COMPLET</span>
+                  <h4 class="outcome-card__title">Modul I + Modul II</h4>
+                  <p class="outcome-card__subline">De la bazele designului până la dezvoltarea proiectului complet.</p>
+                </div>
+                <div class="outcome-card__price">
+                  7.800 lei <span class="outcome-card__price-sub">total</span>
+                </div>
+              </div>
+
+              <div class="outcome-highlight-box">
+                <span class="outcome-highlight-label">La final</span>
+                <div class="outcome-cert-title">Certificare ICDL 2D Design</div>
+                <div class="outcome-plus-separator" aria-hidden="true">+</div>
+                <div class="outcome-cert-title">Certificat de absolvire cu recunoaștere națională</div>
+                <div class="outcome-cert-badge">Specializare: Decorator interioare · COR 343202</div>
+                <p class="outcome-supporting-text" style="margin-top: 0.5rem; font-size: 0.75rem;">
+                  Se obține după finalizarea programului complet (Modul I + Modul II) și promovarea examenului final de absolvire.
+                </p>
+              </div>
+
+              <div class="outcome-card__body">
+                <ul class="outcome-list">
+                  <li>proiectare 2D și dezvoltarea modelului 3D;</li>
+                  <li>mobilier, iluminat, finisaje și materiale;</li>
+                  <li>planuri, vederi, secțiuni și detalii;</li>
+                  <li>planșe tehnice și planșe de prezentare;</li>
+                  <li>organizarea și bugetarea proiectului;</li>
+                  <li>dezvoltarea și prezentarea unui proiect complet de amenajare.</li>
+                </ul>
+              </div>
+
+              <div class="outcome-card__note">
+                Modulul II continuă competențele dezvoltate în Modulul I și nu poate fi urmat separat.
+              </div>
+            </div>
+          </div>
         </div>
 
+        <!-- Despre program -->
         <div class="modal-section">
-          <h3 class="modal-section-title">Ce vei învăța</h3>
+          <h3 class="modal-section-title">Despre program</h3>
+          <p>Programul este construit progresiv. În Modulul I sunt dezvoltate fundamentele designului interior, desenului tehnic, releveului și proiectării 2D. Modulul II continuă în mediul digital, prin modelare 3D, dezvoltarea documentației de proiect și realizarea unei amenajări complete.</p>
+        </div>
+
+        <!-- Modul I — Detail -->
+        <div class="modal-section">
+          <h3 class="modal-section-title">Modul I — Fundamentul proiectului</h3>
+          <p>Înveți să observi, măsori, organizezi și reprezinți corect un spațiu înainte de a trece la dezvoltarea lui digitală.</p>
           <ul class="modal-list">
-            <li>Analiza și citirea spațiului interior</li>
-            <li>Principii de estetică, proporție și culoare</li>
-            <li>Elaborarea planurilor de amenajare</li>
-            <li>Selecția mobilierului, materialelor și finisajelor</li>
-            <li>Prezentarea proiectului de design interior</li>
-            <li>Utilizarea instrumentelor profesionale de design</li>
+            <li>introducere în design și stiluri;</li>
+            <li>compoziție și funcționalitate;</li>
+            <li>materiale și finisaje;</li>
+            <li>culoare, lumină și ambient;</li>
+            <li>mobilier și ergonomie;</li>
+            <li>măsurători și releveu;</li>
+            <li>desen tehnic și reprezentare la scară;</li>
+            <li>moodboard și concept;</li>
+            <li>analiza cerințelor beneficiarului;</li>
+            <li>proiectare digitală 2D / CAD.</li>
+          </ul>
+          <p class="modal-context-note">Pregătirea pentru ICDL 2D Design este integrată în această etapă.</p>
+        </div>
+
+        <!-- Modul II — Detail -->
+        <div class="modal-section">
+          <h3 class="modal-section-title">Modul II — Dezvoltarea proiectului</h3>
+          <p>Cunoștințele din prima etapă sunt aplicate și dezvoltate într-un proiect complet de amenajare interioară.</p>
+          <ul class="modal-list">
+            <li>proiectare digitală și modelare 3D;</li>
+            <li>transformarea informației din 2D în 3D;</li>
+            <li>mobilier și elemente de iluminat;</li>
+            <li>plan de mobilare și finisaje;</li>
+            <li>vederi, secțiuni și reprezentări la scară;</li>
+            <li>planșe tehnice;</li>
+            <li>planșe de prezentare;</li>
+            <li>materiale, cromatică și moodboard;</li>
+            <li>detalii tehnice relevante;</li>
+            <li>necesar de materiale;</li>
+            <li>planificarea etapelor și buget;</li>
+            <li>prezentarea soluției finale.</li>
           </ul>
         </div>
 
+        <!-- Cum se desfășoară -->
         <div class="modal-section">
-          <h3 class="modal-section-title">Structura cursului</h3>
-          <p>Cursul combină sesiuni teoretice cu ateliere practice și proiecte aplicate. Structura detaliată este disponibilă la sediu sau la cerere.</p>
+          <h3 class="modal-section-title">Cum se desfășoară</h3>
+          <p>Programul complet se desfășoară pe parcursul a aproximativ 3 luni. Întâlnirile cu formatorul sunt completate de activitate practică individuală, cea mai mare parte a exercițiilor fiind aplicată direct pe proiect.</p>
+          <p style="margin-top:0.5rem;">Programarea se stabilește de comun acord după formarea grupei.</p>
         </div>
 
-        <div class="modal-section">
-          <h3 class="modal-section-title">Certificare</h3>
-          <p>Cursul este autorizat în cadrul sistemului național de formare profesională a adulților. La finalizare, participanții primesc certificatul corespunzător programului de specializare.</p>
-        </div>
+        <!-- Expandable programme -->
+        <details class="course-program">
+          <summary>
+            <span>Vezi programa completă</span>
+            <svg class="program-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+
+          <div class="course-program__content">
+
+            <section>
+              <h4>Modul I — Fundamentul designului interior</h4>
+              <ul>
+                <li>Introducere în designul interior</li>
+                <li>Istoria designului, stiluri și tendințe contemporane</li>
+                <li>Compoziție și organizarea spațiului</li>
+                <li>Materiale, texturi, finisaje și furnizori</li>
+                <li>Culoare, lumină și ambient</li>
+                <li>Mobilier și funcționalitate</li>
+                <li>Analiza cerințelor beneficiarului</li>
+              </ul>
+            </section>
+
+            <section>
+              <h4>Releveu și desen tehnic</h4>
+              <ul>
+                <li>Măsurarea spațiului existent</li>
+                <li>Realizarea releveului</li>
+                <li>Desen tehnic la scară</li>
+                <li>Geometrie plană și în spațiu</li>
+                <li>Standarde și reguli de reprezentare</li>
+              </ul>
+            </section>
+
+            <section>
+              <h4>Concept și moodboard</h4>
+              <ul>
+                <li>Surse de inspirație și documentare</li>
+                <li>Tipuri de moodboard</li>
+                <li>Transpunerea conceptului în planșe vizuale</li>
+                <li>Culoare, materiale, texturi și accesorii</li>
+                <li>Corelarea conceptului cu funcțiunea spațiului</li>
+              </ul>
+            </section>
+
+            <section>
+              <h4>ICDL 2D Design / CAD</h4>
+              <ul>
+                <li>Interfața și organizarea desenului 2D</li>
+                <li>Crearea și salvarea desenelor</li>
+                <li>Layere</li>
+                <li>Crearea și modificarea obiectelor</li>
+                <li>Selecție și manipulare</li>
+                <li>Măsurători</li>
+                <li>Texte și cote</li>
+                <li>Blocuri</li>
+                <li>Import și export</li>
+                <li>Pregătirea desenelor pentru printare / plotare</li>
+              </ul>
+            </section>
+
+            <section>
+              <h4>Modul II — Proiectare digitală și 3D</h4>
+              <ul>
+                <li>Programe de design specializat</li>
+                <li>Aplicarea desenului tehnic în mediul digital</li>
+                <li>Trecerea de la 2D la 3D</li>
+                <li>Modelare și editare</li>
+                <li>Biblioteci de obiecte</li>
+                <li>Mobilier și corpuri de iluminat</li>
+                <li>Scalare și redactare</li>
+              </ul>
+            </section>
+
+            <section>
+              <h4>Dezvoltarea proiectului</h4>
+              <ul>
+                <li>Plan de mobilare</li>
+                <li>Finisaje și materiale</li>
+                <li>Planșe tehnice</li>
+                <li>Vederi și secțiuni</li>
+                <li>Planșe de prezentare</li>
+                <li>Corelarea cu moodboardul</li>
+                <li>Prezentarea și argumentarea soluției</li>
+              </ul>
+            </section>
+
+            <section>
+              <h4>Detalii tehnice</h4>
+              <ul>
+                <li>Plan de iluminat și elemente electrice relevante</li>
+                <li>Plan de mobilare</li>
+                <li>Circulații</li>
+                <li>Elemente relevante pentru instalații sanitare și încălzire/răcire</li>
+                <li>Finisaje și texturi</li>
+                <li>Stereotomii pentru baie și bucătărie</li>
+                <li>Accente cromatice și volumetrice</li>
+              </ul>
+            </section>
+
+            <section>
+              <h4>Organizarea și bugetarea proiectului</h4>
+              <ul>
+                <li>Etapele proiectului</li>
+                <li>Planificarea activităților</li>
+                <li>Necesarul de materiale</li>
+                <li>Furnizori și comenzi</li>
+                <li>Stabilirea bugetului</li>
+                <li>Prezentarea proiectului final</li>
+              </ul>
+            </section>
+
+          </div>
+        </details>
 
         <div class="modal-section">
-          <h3 class="modal-section-title">Locație / format</h3>
-          <p>Studio BlankSpace<br/>Str. 13 Decembrie nr. 127, bloc 4, parter, Qualis 2, Brașov, România<br/>Format față-în-față, în grupe mici.</p>
+          <h3 class="modal-section-title">Locație</h3>
+          <address class="modal-address">
+            Studio BlankSpace<br/>
+            Str. 13 Decembrie nr. 127, bloc 4, parter, Qualis 2, Brașov, România
+          </address>
         </div>
 
         <div class="modal-actions">
@@ -97,7 +338,7 @@
     style="display:none;"
   >
     <div class="modal-backdrop" data-close-modal="modal-imprimare-3d"></div>
-    <div class="modal-panel" role="document">
+    <div class="modal-panel" role="document" tabindex="-1">
 
       <div class="modal-header">
         <div class="modal-header-text">
@@ -133,7 +374,7 @@
           </div>
           <div class="quick-info-item">
             <span class="quick-info-label">Format</span>
-            <span class="quick-info-value">Fizic + online</span>
+            <span class="quick-info-value">Fizic sau online</span>
           </div>
         </div>
 
@@ -268,12 +509,12 @@
     style="display:none;"
   >
     <div class="modal-backdrop" data-close-modal="modal-icdl"></div>
-    <div class="modal-panel" role="document">
+    <div class="modal-panel" role="document" tabindex="-1">
 
       <div class="modal-header">
         <div class="modal-header-text">
-          <h2 id="modal-icdl-title" class="modal-title">Cursuri de competențe digitale ICDL</h2>
-          <p class="modal-subtitle">Pregătire practică pentru dezvoltarea și certificarea competențelor digitale</p>
+          <h2 id="modal-icdl-title" class="modal-title">Cursuri și certificări ICDL</h2>
+          <p class="modal-subtitle">Învață · Verifică · Susține examenele · Certifică-ți competențele</p>
         </div>
         <button class="modal-close" aria-label="Închide fereastra" data-close-modal="modal-icdl">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="size-5" aria-hidden="true">
@@ -284,19 +525,23 @@
 
       <div class="modal-body">
 
+        <p class="modal-lead-desc">
+          Pregătire și testare pentru ICDL START prin Centrul de Testare Acreditat ICDL BlankSpace Brașov.
+        </p>
+
         <!-- Quick info -->
         <div class="quick-info-grid" aria-label="Informații rapide ICDL">
           <div class="quick-info-item">
-            <span class="quick-info-label">Preț pachet</span>
-            <span class="quick-info-value quick-info-pending">în curs de actualizare</span>
+            <span class="quick-info-label">Structură</span>
+            <span class="quick-info-value">4 module</span>
           </div>
           <div class="quick-info-item">
-            <span class="quick-info-label">Module</span>
-            <span class="quick-info-value">La alegere</span>
+            <span class="quick-info-label">Format curs</span>
+            <span class="quick-info-value">Fizic sau live online</span>
           </div>
           <div class="quick-info-item">
-            <span class="quick-info-label">Format</span>
-            <span class="quick-info-value">Fizic + online</span>
+            <span class="quick-info-label">Testare</span>
+            <span class="quick-info-value">Prin centrul ICDL BlankSpace</span>
           </div>
           <div class="quick-info-item">
             <span class="quick-info-label">Program</span>
@@ -304,185 +549,316 @@
           </div>
         </div>
 
+        <p class="modal-context-note" style="margin-top: -0.5rem;">
+          Testarea se organizează în funcție de sesiunile și opțiunile disponibile ale centrului.
+        </p>
+
+        <!-- Main Options: 3 Cards -->
         <div class="modal-section">
-          <h3 class="modal-section-title">Despre curs</h3>
-          <p>Dezvoltă competențe digitale practice pentru școală, studiu și activitatea profesională, cu posibilitatea certificării internaționale ICDL. Pregătirea poate fi adaptată modulelor sau profilului de certificare ales.</p>
+          <h3 class="modal-section-title">Alege varianta potrivită</h3>
+
+          <div class="outcome-cards outcome-cards--3">
+            <!-- Card 1: Vreau să învăț -->
+            <div class="outcome-card">
+              <div class="outcome-card__header">
+                <div>
+                  <span class="outcome-card__badge">VREAU SĂ ÎNVĂȚ</span>
+                  <h4 class="outcome-card__title">Curs ICDL START</h4>
+                </div>
+                <div class="outcome-card__price">
+                  1.490 lei
+                </div>
+              </div>
+
+              <p class="outcome-card__duration">24 ore de pregătire · 4 module</p>
+              <p class="outcome-card__subline" style="margin-bottom: 0.5rem;">4 module × aproximativ 6 ore de pregătire</p>
+
+              <div class="outcome-card__body">
+                <p class="outcome-supporting-text" style="margin-bottom: 0.5rem;">
+                  <strong>Doar curs</strong> · Pregătire practică în grupă, fizic sau live online, pentru dezvoltarea competențelor evaluate în cadrul ICDL START:
+                </p>
+                <ul class="outcome-list">
+                  <li>Utilizarea computerului;</li>
+                  <li>Instrumente online;</li>
+                  <li>Editare de text;</li>
+                  <li>Calcul tabelar.</li>
+                </ul>
+              </div>
+
+              <div class="outcome-card__note">
+                Prețul de 1.490 lei include exclusiv cursul de pregătire. Simulările, examenele și seria ICDL nu sunt incluse.
+              </div>
+            </div>
+
+            <!-- Card 2: Știu deja materia -->
+            <div class="outcome-card">
+              <div class="outcome-card__header">
+                <div>
+                  <span class="outcome-card__badge">ȘTIU DEJA MATERIA</span>
+                  <h4 class="outcome-card__title">Pachet certificare ICDL START</h4>
+                </div>
+                <div class="outcome-card__price">
+                  990 lei
+                </div>
+              </div>
+
+              <p class="outcome-card__duration">Seria ICDL + 4 examene</p>
+              <p class="outcome-card__subline" style="margin-bottom: 0.5rem;">Pentru cei care au deja competențele necesare și vor să meargă direct către certificare.</p>
+
+              <div class="outcome-card__body">
+                <div class="outcome-list-intro">Include:</div>
+                <ul class="outcome-list">
+                  <li>seria unică de înscriere ICDL;</li>
+                  <li>câte o examinare pentru fiecare dintre cele 4 module ICDL START;</li>
+                  <li>programarea și administrarea testării prin centrul BlankSpace;</li>
+                  <li>solicitarea certificatului electronic după promovarea examenelor.</li>
+                </ul>
+
+                <p class="outcome-supporting-text" style="margin-top: 0.5rem;">
+                  Pachetul include o examinare pentru fiecare dintre cele 4 module. Eventualele reexaminări se achită separat.
+                </p>
+
+                <p class="outcome-supporting-text" style="margin-top: 0.25rem;">
+                  Cursul nu este obligatoriu pentru susținerea examenelor ICDL.
+                </p>
+
+                <div class="existing-series-note">
+                  Ai deja serie ICDL? Pachetul celor 4 examene este 750 lei. Disponibil pentru candidații care dețin deja o serie unică ICDL.
+                </div>
+              </div>
+
+              <div class="outcome-card__note">
+                <a href="#icdl-simulari" class="outcome-card-inline-link">Nu ești sigur că ești pregătit? Vezi simulările &rarr;</a>
+              </div>
+            </div>
+
+            <!-- Card 3: Parcurs complet -->
+            <div class="outcome-card outcome-card--featured">
+              <div class="outcome-card__header">
+                <div>
+                  <span class="outcome-card__badge outcome-card__badge--gold">PARCURS COMPLET</span>
+                  <h4 class="outcome-card__title">Curs + simulări + certificare</h4>
+                </div>
+                <div class="outcome-card__price">
+                  2.790 lei
+                </div>
+              </div>
+
+              <p class="outcome-card__duration">24h curs + 4 simulări + seria ICDL + 4 examene</p>
+
+              <div class="progression-steps-mini">
+                <span>Înveți</span> &rarr; <span>Simulezi</span> &rarr; <span>Susții examenele</span> &rarr; <span>Obții certificarea</span>
+              </div>
+
+              <div class="outcome-card__body">
+                <div class="outcome-list-intro">Include:</div>
+                <ul class="outcome-list">
+                  <li>24 ore curs ICDL START;</li>
+                  <li>4 simulări ICDL;</li>
+                  <li>seria unică de înscriere ICDL;</li>
+                  <li>câte o examinare pentru fiecare dintre cele 4 module ICDL START;</li>
+                  <li>administrarea parcursului de certificare;</li>
+                  <li>solicitarea certificatului electronic după promovarea examenelor.</li>
+                </ul>
+
+                <p class="outcome-supporting-text" style="margin-top: 0.5rem;">
+                  Pachetul include o examinare pentru fiecare modul. Eventualele reexaminări se achită separat.
+                </p>
+              </div>
+
+              <div class="outcome-card__note">
+                Parcurs integrat de la învățare practică până la emiterea certificatului.
+              </div>
+            </div>
+          </div>
         </div>
 
+        <!-- 4 Competencies -->
         <div class="modal-section">
-          <h3 class="modal-section-title">Cui se adresează</h3>
-          <p>Elevilor, studenților, cadrelor didactice, adulților și profesioniștilor care doresc să își dezvolte competențele digitale sau să se pregătească pentru certificarea ICDL.</p>
-        </div>
+          <h3 class="modal-section-title">Cele 4 competențe ICDL START</h3>
 
-        <!-- Skill cards -->
-        <div class="modal-section">
-          <h3 class="modal-section-title">Ce vei învăța</h3>
           <div class="skill-cards">
             <div class="skill-card">
-              <span class="skill-card__title">Documente / Word</span>
-              <p class="skill-card__desc">Crearea, editarea, formatarea și organizarea documentelor, utilizarea tabelelor și imaginilor și pregătirea documentelor pentru distribuire.</p>
+              <div class="skill-card__header">
+                <span class="skill-card__title">Utilizarea computerului</span>
+                <span class="skill-card__official">Computer Essentials</span>
+              </div>
+              <p class="skill-card__desc">Utilizarea sistemului de operare, fișiere și foldere, setări, stocare și noțiuni de bază privind securitatea digitală.</p>
             </div>
             <div class="skill-card">
-              <span class="skill-card__title">Calcul tabelar / Excel</span>
-              <p class="skill-card__desc">Organizarea datelor, formule și funcții, formatare, calcule și reprezentarea informațiilor prin grafice.</p>
+              <div class="skill-card__header">
+                <span class="skill-card__title">Instrumente online</span>
+                <span class="skill-card__official">Online Essentials</span>
+              </div>
+              <p class="skill-card__desc">Navigare web, căutarea și evaluarea informațiilor, email și utilizarea instrumentelor de comunicare online.</p>
             </div>
             <div class="skill-card">
-              <span class="skill-card__title">Prezentări / PowerPoint</span>
-              <p class="skill-card__desc">Crearea și organizarea prezentărilor, utilizarea textelor, tabelelor, imaginilor, graficelor și pregătirea prezentării finale.</p>
+              <div class="skill-card__header">
+                <span class="skill-card__title">Editare de text</span>
+                <span class="skill-card__official">Documents</span>
+              </div>
+              <p class="skill-card__desc">Crearea și formatarea documentelor, tabele, obiecte și pregătirea documentelor pentru utilizare și imprimare.</p>
             </div>
             <div class="skill-card">
-              <span class="skill-card__title">Computer &amp; Online</span>
-              <p class="skill-card__desc">Utilizarea computerului, organizarea fișierelor, lucrul cu dispozitive, rețele, instrumente online și noțiuni de siguranță digitală.</p>
-            </div>
-            <div class="skill-card">
-              <span class="skill-card__title">2D Design / CAD</span>
-              <p class="skill-card__desc">Dezvoltarea competențelor de proiectare și desen tehnic asistat de calculator în mediul 2D.</p>
-            </div>
-            <div class="skill-card">
-              <span class="skill-card__title">Inteligență Artificială</span>
-              <p class="skill-card__desc">Înțelegerea conceptelor de bază, a posibilităților și limitărilor inteligenței artificiale și utilizarea responsabilă a instrumentelor AI.</p>
+              <div class="skill-card__header">
+                <span class="skill-card__title">Calcul tabelar</span>
+                <span class="skill-card__official">Spreadsheets</span>
+              </div>
+              <p class="skill-card__desc">Lucrul cu foi de calcul, formule și funcții, organizarea datelor, formatare și grafice.</p>
             </div>
           </div>
         </div>
 
-        <!-- Profiles -->
-        <div class="modal-section">
-          <h3 class="modal-section-title">Profile și certificări</h3>
-          <div class="profile-chips">
-            <span class="profile-chip">ICDL CORE</span>
-            <span class="profile-chip">PROFIL BAC</span>
-            <span class="profile-chip">PROFIL DIDACTIC</span>
-            <span class="profile-chip">Module individuale</span>
+        <!-- Simulations -->
+        <div id="icdl-simulari" class="modal-section modal-section--box">
+          <div class="section-box-header">
+            <div>
+              <h3 class="modal-section-title">Simulări ICDL</h3>
+              <h4 class="modal-box-heading">Nu ești sigur dacă ești pregătit?</h4>
+              <p class="modal-box-sub">Testează-te înainte de examen.</p>
+            </div>
+            <div class="sim-price-tags">
+              <div class="sim-price-tag">
+                <span class="sim-price-tag__label">1 simulare</span>
+                <span class="sim-price-tag__val">150 lei</span>
+              </div>
+              <div class="sim-price-tag sim-price-tag--bundle">
+                <span class="sim-price-tag__label">Pachet 4 simulări</span>
+                <span class="sim-price-tag__val">520 lei</span>
+              </div>
+            </div>
           </div>
+          <p style="margin-top: 0.75rem;">
+            Simularea te ajută să îți verifici nivelul și să te familiarizezi cu platforma și tipologia cerințelor înainte de examen.
+          </p>
+          <p class="modal-context-note">
+            Simularea este opțională și nu este obligatorie înaintea examenului.
+          </p>
         </div>
 
-        <!-- How it works — 4-step process -->
+        <!-- How it works -->
         <div class="modal-section">
           <h3 class="modal-section-title">Cum funcționează</h3>
           <ol class="icdl-steps" aria-label="Pașii procesului ICDL">
             <li class="icdl-step">
-              <span class="icdl-step__num">1</span>
-              <span class="icdl-step__label">Alegi profilul sau modulele</span>
+              <span class="icdl-step__num">1. Alegi</span>
+              <span class="icdl-step__label">Curs, simulare sau direct examinare.</span>
+              <span class="icdl-step__sub">Nu toți candidații trebuie să urmeze același traseu.</span>
             </li>
-            <li class="icdl-step-arrow" aria-hidden="true">→</li>
             <li class="icdl-step">
-              <span class="icdl-step__num">2</span>
-              <span class="icdl-step__label">Pregătire</span>
+              <span class="icdl-step__num">2. Înveți</span>
+              <span class="icdl-step__label">24 ore de pregătire practică.</span>
+              <span class="icdl-step__sub">Urmezi cursul dacă ai nevoie să îți formezi sau consolidezi competențele.</span>
             </li>
-            <li class="icdl-step-arrow" aria-hidden="true">→</li>
             <li class="icdl-step">
-              <span class="icdl-step__num">3</span>
-              <span class="icdl-step__label">Simulare</span>
+              <span class="icdl-step__num">3. Verifici</span>
+              <span class="icdl-step__label">Simulare ICDL.</span>
+              <span class="icdl-step__sub">Îți verifici nivelul și identifici zonele care mai trebuie consolidate.</span>
             </li>
-            <li class="icdl-step-arrow" aria-hidden="true">→</li>
             <li class="icdl-step">
-              <span class="icdl-step__num">4</span>
-              <span class="icdl-step__label">Testare</span>
+              <span class="icdl-step__num">4. Susții examenele</span>
+              <span class="icdl-step__label">Câte un examen pentru fiecare modul.</span>
+              <span class="icdl-step__sub">ICDL START presupune promovarea celor 4 module.</span>
+            </li>
+            <li class="icdl-step">
+              <span class="icdl-step__num">5. Obții certificarea</span>
+              <span class="icdl-step__label">Certificat oficial ICDL.</span>
+              <span class="icdl-step__sub">După promovarea modulelor necesare este solicitat certificatul ICDL.</span>
             </li>
           </ol>
-        </div>
-
-        <div class="modal-section">
-          <h3 class="modal-section-title">Cum se desfășoară</h3>
-          <p>Pregătirea este disponibilă fizic la Studio BlankSpace Brașov și online. Programul se stabilește împreună cu participantul sau cu grupa.</p>
-          <p style="margin-top:0.5rem;">Testarea se realizează prin Centrul de Testare Acreditat ICDL BlankSpace. Testarea la distanță poate fi disponibilă în condițiile procedurii ICDL România și pentru sesiunile organizate de centru.</p>
-        </div>
-
-        <!-- Pricing — placeholder -->
-        <div class="modal-section">
-          <h3 class="modal-section-title">Prețuri</h3>
-          <div class="pricing-rows">
-            <div class="pricing-row">
-              <span class="pricing-label">Pregătire</span>
-              <span class="pricing-value pricing-pending">în curs de actualizare</span>
-            </div>
-            <div class="pricing-row">
-              <span class="pricing-label">Examene / certificare ICDL</span>
-              <span class="pricing-value pricing-pending">în curs de actualizare</span>
-            </div>
-            <div class="pricing-row">
-              <span class="pricing-label">Pachet pregătire + certificare</span>
-              <span class="pricing-value pricing-pending">în curs de actualizare</span>
-            </div>
+          <div class="direct-exam-callout">
+            <strong>Ai deja experiență?</strong> Poți merge direct către simulare sau examinare, fără să urmezi cursul.
           </div>
         </div>
 
-        <!-- Expandable programme -->
+        <!-- Course Delivery -->
+        <div class="modal-section">
+          <h3 class="modal-section-title">Cum se desfășoară cursul</h3>
+          <p>
+            Cursul ICDL START are 24 de ore de pregătire practică, distribuite între cele 4 module. Fiecare modul beneficiază de aproximativ 6 ore de pregătire.
+          </p>
+          <p style="margin-top: 0.5rem;">
+            Întâlnirile pot fi organizate fizic la BlankSpace Brașov sau live online.
+          </p>
+          <p style="margin-top: 0.5rem;">
+            Programarea se stabilește după formarea grupei.
+          </p>
+        </div>
+
+        <!-- BAC -->
+        <div class="modal-section modal-section--box">
+          <h3 class="modal-section-title">ICDL și Bacalaureatul</h3>
+          <p>
+            Pentru elevi, BlankSpace oferă informații și testare pentru ICDL PROFIL BAC, certificarea dedicată echivalării probei de competențe digitale la Bacalaureat, conform metodologiei în vigoare.
+          </p>
+        </div>
+
+        <!-- Other ICDL Certifications -->
+        <div class="modal-section">
+          <h3 class="modal-section-title">Ai nevoie de o altă certificare ICDL?</h3>
+          <p>
+            BlankSpace poate organiza și testări pentru alte module ICDL disponibile prin centrul nostru, fără obligativitatea participării la un curs.
+          </p>
+          <div class="other-icdl-links">
+            <a
+              href="https://icdl.ro/certificare-icdl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-external-link"
+            >
+              <span>Vezi certificările și modulele ICDL</span>
+              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+            </a>
+            <button
+              type="button"
+              class="btn-inline-secondary"
+              data-modal-contact="Testare ICDL"
+              data-close-modal="modal-icdl"
+            >
+              Solicită testare pentru alt modul
+            </button>
+          </div>
+        </div>
+
+        <!-- Individual Fees -->
         <details class="course-program">
           <summary>
-            <span>Vezi modulele și programa</span>
+            <span>Vezi tarifele individuale</span>
             <svg class="program-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="course-program__content">
-            <section>
-              <h4>Documente / Word</h4>
-              <ul>
-                <li>Crearea, deschiderea și salvarea documentelor</li>
-                <li>Editarea și formatarea textului</li>
-                <li>Paragrafe și organizarea conținutului</li>
-                <li>Tabele, imagini și obiecte</li>
-                <li>Configurarea paginii</li>
-                <li>Verificarea și pregătirea documentelor pentru distribuire</li>
-              </ul>
-            </section>
-            <section>
-              <h4>Calcul tabelar / Excel</h4>
-              <ul>
-                <li>Introducerea și organizarea datelor</li>
-                <li>Celule, rânduri, coloane și foi de calcul</li>
-                <li>Formule și funcții</li>
-                <li>Formatarea datelor</li>
-                <li>Sortare și organizare</li>
-                <li>Grafice</li>
-                <li>Pregătirea foilor de calcul pentru utilizare și imprimare</li>
-              </ul>
-            </section>
-            <section>
-              <h4>Prezentări / PowerPoint</h4>
-              <ul>
-                <li>Crearea și organizarea prezentărilor</li>
-                <li>Teme și layout-uri</li>
-                <li>Text și tabele</li>
-                <li>Imagini și obiecte</li>
-                <li>Grafice</li>
-                <li>Tranziții și animații</li>
-                <li>Pregătirea prezentării finale</li>
-              </ul>
-            </section>
-            <section>
-              <h4>Computer &amp; Online</h4>
-              <ul>
-                <li>Computere, dispozitive și software</li>
-                <li>Utilizarea sistemului de operare</li>
-                <li>Organizarea fișierelor și folderelor</li>
-                <li>Rețele și conectivitate</li>
-                <li>Utilizarea instrumentelor online</li>
-                <li>Protecția datelor și securitate digitală</li>
-              </ul>
-            </section>
-            <section>
-              <h4>2D Design / CAD</h4>
-              <ul>
-                <li>Principii de desen și proiectare 2D</li>
-                <li>Crearea și modificarea elementelor grafice</li>
-                <li>Organizarea desenului</li>
-                <li>Cotare și adnotare</li>
-                <li>Pregătirea desenelor pentru prezentare și imprimare</li>
-              </ul>
-            </section>
-            <section>
-              <h4>Inteligență Artificială</h4>
-              <ul>
-                <li>Concepte de bază ale inteligenței artificiale</li>
-                <li>Exemple și domenii de utilizare</li>
-                <li>Posibilități și limitări</li>
-                <li>Utilizarea instrumentelor AI</li>
-                <li>Etică și utilizare responsabilă</li>
-              </ul>
-            </section>
-            <p class="course-program__note">Modulele parcurse se stabilesc în funcție de obiectivul participantului și de profilul de certificare ales.</p>
+            <div class="pricing-rows">
+              <div class="pricing-row">
+                <span class="pricing-label">Simulare ICDL</span>
+                <span class="pricing-value">150 lei / modul</span>
+              </div>
+              <div class="pricing-row">
+                <span class="pricing-label">Pachet 4 simulări</span>
+                <span class="pricing-value">520 lei</span>
+              </div>
+              <div class="pricing-row">
+                <span class="pricing-label">Examen ICDL</span>
+                <span class="pricing-value">200 lei / modul</span>
+              </div>
+              <div class="pricing-row">
+                <span class="pricing-label">Pachet 4 examene ICDL START</span>
+                <span class="pricing-value">750 lei</span>
+              </div>
+              <div class="pricing-row">
+                <span class="pricing-label">Reexaminare ICDL</span>
+                <span class="pricing-value">150 lei / modul</span>
+              </div>
+            </div>
+            <p class="course-program__note">Pachetul de 4 examene la 750 lei este disponibil pentru candidații care dețin deja o serie unică ICDL.</p>
+            <p class="course-program__note" style="border-top: none; padding-top: 0;">Tariful se aplică repetării unui modul nepromovat anterior prin Centrul ICDL BlankSpace. Se reexaminează doar modulul nepromovat.</p>
+            <p class="course-program__note" style="border-top: none; padding-top: 0;">Certificarea ICDL se obține după promovarea examenelor aferente modulelor necesare. Pachetele de 990 lei și 2.790 lei includ câte o examinare inițială per modul; eventualele reexaminări se achită separat.</p>
+            <p class="course-program__note" style="border-top: none; padding-top: 0;">Pentru anumite module ICDL, tarifele și condițiile de testare pot diferi. Confirmăm costul înainte de programare.</p>
+            <p class="course-program__note" style="border-top: none; padding-top: 0;">Seria unică ICDL este necesară pentru înregistrarea candidatului în procesul de certificare și se utilizează pe parcursul profilului ICDL.</p>
+            <p class="course-program__note" style="border-top: none; padding-top: 0;">Serviciile opționale oferite direct de ICDL România, precum certificatul tipărit sau emiterea în regim de urgență, se taxează conform tarifelor ICDL în vigoare la data solicitării.</p>
           </div>
         </details>
 
@@ -519,7 +895,7 @@
     style="display:none;"
   >
     <div class="modal-backdrop" data-close-modal="modal-arhitectura"></div>
-    <div class="modal-panel" role="document">
+    <div class="modal-panel" role="document" tabindex="-1">
 
       <div class="modal-header">
         <div class="modal-header-text">
@@ -1079,6 +1455,433 @@
   .modal-btn-primary:focus-visible,
   .modal-btn-secondary:focus-visible { outline: 2px solid #B8A22A; outline-offset: 3px; }
 
+  /* ── Outcome cards (Ce obții la final / Alege varianta) ── */
+  .outcome-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .outcome-cards--3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .outcome-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    border-radius: 0.875rem;
+    background: #F8F7F4;
+    border: 1px solid #E8E5E0;
+    position: relative;
+    box-sizing: border-box;
+  }
+  .outcome-card--featured {
+    background: #FFFFFF;
+    border: 1.5px solid #B8A22A;
+    box-shadow: 0 4px 20px rgba(184, 162, 42, 0.12);
+  }
+  .outcome-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #E8E5E0;
+  }
+  .outcome-card--featured .outcome-card__header {
+    border-bottom-color: rgba(184, 162, 42, 0.25);
+  }
+  .outcome-card__badge {
+    display: inline-block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #4B5563;
+    background: #EBE8E1;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.35rem;
+  }
+  .outcome-card__badge--gold {
+    color: #8A7020;
+    background: rgba(184, 162, 42, 0.12);
+    border: 1px solid rgba(184, 162, 42, 0.25);
+  }
+  .outcome-card__title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #111111;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .outcome-card__price {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: #111111;
+    text-align: right;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .outcome-card__price-sub {
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: #6B7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .outcome-highlight-box {
+    background: #FFFFFF;
+    border: 1px solid #D9D6D1;
+    border-radius: 0.625rem;
+    padding: 0.875rem;
+    margin: 0.25rem 0 0.75rem;
+  }
+  .outcome-card--featured .outcome-highlight-box {
+    background: rgba(184, 162, 42, 0.05);
+    border-color: rgba(184, 162, 42, 0.3);
+  }
+  .outcome-highlight-label {
+    display: block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: #B8A22A;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+  }
+  .outcome-cert-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.35;
+  }
+  .outcome-plus-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #B8A22A;
+    margin: 0.35rem 0;
+    line-height: 1;
+  }
+  .outcome-cert-badge {
+    display: inline-block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #8A7020;
+    background: rgba(184, 162, 42, 0.12);
+    border: 1px solid rgba(184, 162, 42, 0.25);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    margin-top: 0.4rem;
+  }
+  .outcome-supporting-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8125rem;
+    color: #4B5563;
+    line-height: 1.5;
+    margin: 0.5rem 0 0;
+  }
+  .outcome-card__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .outcome-list-intro {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #111111;
+    margin: 0.25rem 0 0.35rem;
+  }
+  .outcome-list {
+    margin: 0;
+    padding-left: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .outcome-list li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8125rem;
+    color: #4B5563;
+    line-height: 1.45;
+  }
+  .outcome-card__duration {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #4B5563;
+    margin: 0 0 0.5rem;
+  }
+  .outcome-card__subline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8125rem;
+    color: #6B7280;
+    margin: 0.25rem 0 0;
+    line-height: 1.35;
+  }
+  .modal-context-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8125rem;
+    color: #6B7280;
+    font-style: italic;
+    margin: 0.35rem 0 0;
+  }
+  .outcome-card__note {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #6B7280;
+    font-style: italic;
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed #D9D6D1;
+    line-height: 1.4;
+  }
+  .outcome-card-inline-link {
+    display: inline-block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #B8A22A;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .outcome-card-inline-link:hover {
+    color: #8A7020;
+    text-decoration: underline;
+  }
+  .existing-series-note {
+    margin-top: 0.625rem;
+    padding: 0.45rem 0.625rem;
+    background: #EFECE6;
+    border-radius: 0.375rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #4B5563;
+    line-height: 1.35;
+  }
+  .progression-steps-mini {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #8A7020;
+    background: rgba(184, 162, 42, 0.08);
+    border: 1px solid rgba(184, 162, 42, 0.22);
+    padding: 0.4rem 0.625rem;
+    border-radius: 0.375rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+  .skill-card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin-bottom: 0.375rem;
+  }
+  .skill-card__official {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: #8A7020;
+    font-style: italic;
+  }
+  .modal-section--box {
+    padding: 1.125rem;
+    background: #F8F7F4;
+    border: 1px solid #E8E5E0;
+    border-radius: 0.75rem;
+  }
+  .section-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .modal-box-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111111;
+    margin: 0.25rem 0 0.15rem;
+  }
+  .modal-box-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8125rem;
+    color: #6B7280;
+    margin: 0;
+  }
+  .sim-price-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .sim-price-tag {
+    padding: 0.375rem 0.75rem;
+    background: #FFFFFF;
+    border: 1px solid #D9D6D1;
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+  .sim-price-tag--bundle {
+    border-color: rgba(184, 162, 42, 0.4);
+    background: rgba(184, 162, 42, 0.08);
+  }
+  .sim-price-tag__label {
+    display: block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #6B7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .sim-price-tag__val {
+    display: block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #111111;
+  }
+  .direct-exam-callout {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(184, 162, 42, 0.08);
+    border: 1px solid rgba(184, 162, 42, 0.22);
+    border-radius: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8125rem;
+    color: #111111;
+    line-height: 1.45;
+  }
+  .other-icdl-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+  .btn-external-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    border-radius: 0.5rem;
+    background: #FFFFFF;
+    border: 1px solid #D9D6D1;
+    color: #111111;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .btn-external-link:hover {
+    border-color: #B8A22A;
+    color: #8A7020;
+    background: #FAF9F5;
+  }
+  .btn-inline-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    border-radius: 0.5rem;
+    background: #F4F4F4;
+    border: 1px solid #D9D6D1;
+    color: #111111;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-inline-secondary:hover {
+    background: #EEEBE6;
+    border-color: #B8A22A;
+  }
+  .modal-lead-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9375rem;
+    color: #4B5563;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── ICDL Steps ── */
+  .icdl-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .icdl-step {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    border-radius: 0.625rem;
+    background: #F8F7F4;
+    border: 1px solid #E8E5E0;
+    text-align: left;
+  }
+  .icdl-step__num {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    color: #B8A22A;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .icdl-step__label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.3;
+  }
+  .icdl-step__sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #6B7280;
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .outcome-cards--3 {
+      grid-template-columns: 1fr;
+    }
+    .icdl-steps {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .outcome-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
   /* ── Mobile ── */
   @media (max-width: 640px) {
     .modal-overlay { padding: 0.375rem; align-items: flex-end; }
@@ -1091,11 +1894,6 @@
     .modal-body { padding: 1rem 1rem 2rem; gap: 1.25rem; }
     .modal-title { font-size: 1.0625rem; }
     .skill-cards { grid-template-columns: 1fr; }
-    .icdl-steps {
-      flex-direction: column;
-      align-items: stretch;
-    }
-    .icdl-step-arrow { text-align: center; padding: 0; transform: rotate(90deg); }
     .modal-actions { flex-direction: column; }
     .modal-btn-primary, .modal-btn-secondary { flex: none; width: 100%; }
     .quick-info-item { min-width: calc(50% - 0.3125rem); }
@@ -1150,6 +1948,19 @@
     document.addEventListener('click', (e) => {
       const target = (e.target as HTMLElement).closest<HTMLElement>('[data-open-modal]');
       if (target) { e.preventDefault(); openModal(target.dataset.openModal!); }
+    });
+
+    // In-modal anchor smooth scroll
+    document.addEventListener('click', (e) => {
+      const anchor = (e.target as HTMLElement).closest<HTMLAnchorElement>('a[href^="#"]');
+      if (!anchor) return;
+      const targetId = anchor.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+      const targetEl = document.querySelector(targetId);
+      if (targetEl && targetEl.closest('.modal-overlay[aria-hidden="false"]')) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
 
     // Close + Contact triggers

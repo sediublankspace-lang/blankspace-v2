@@ -1,0 +1,8 @@
+# Legacy WebWave URL Redirects -> Current Astro Site
+/Curs-3D-Print                 /#activitati     301
+/Admitere-Arhitectura          /#activitati     301
+/Curs-Design-Interior-Modul+I  /#activitati     301
+/Centru_testare_ECDL           /#icdl-centru    301
+/Curs-Design-Interior          /#activitati     301
+/studio                        /#studio         301
+/cursuri/*                     /#activitati     301

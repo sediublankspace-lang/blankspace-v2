@@ -41,6 +41,35 @@ export default function Header() {
     return () => window.removeEventListener("keydown", onKey);
   }, [isMobileMenuOpen]);
 
+  // ── Focus trap for mobile drawer ──────────────────────────────────────────
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "Tab" || !drawerRef.current) return;
+      const focusables = Array.from(
+        drawerRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      );
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isMobileMenuOpen]);
+
   const closeMenu = useCallback(() => {
     setIsMobileMenuOpen(false);
     setIsCoursesOpen(false);
@@ -50,19 +79,19 @@ export default function Header() {
 
   // ── Navigation Data ───────────────────────────────────────────────────────
   const courses = [
-    { name: "Curs Design Interior",             href: "/#activitati",              desc: "Planificare spațială, estetică și prezentare de proiect." },
-    { name: "Curs Imprimare 3D",                href: "/#activitati",              desc: "De la modelare și slicing până la imprimare și materiale tehnice." },
-    { name: "Cursuri competențe digitale ICDL", href: "/#activitati",              desc: "Pregătire pentru certificarea ICDL România, recunoscută internațional." },
-    { name: "Pregătire admitere Arhitectură",    href: "/#activitati",              desc: "Desen, perspectivă, compoziție și geometrie spațială." },
-    { name: "Centru de testare ICDL",            href: "/cursuri/certificare-icdl", desc: "Sesiuni de testare și certificare ICDL într-un cadru autorizat." },
+    { name: "Curs Design Interior",             href: "/#activitati",  desc: "Planificare spațială, estetică și prezentare de proiect." },
+    { name: "Curs Imprimare 3D",                href: "/#activitati",  desc: "De la modelare și slicing până la imprimare și materiale tehnice." },
+    { name: "Cursuri competențe digitale ICDL", href: "/#activitati",  desc: "Pregătire pentru certificarea ICDL România, recunoscută internațional." },
+    { name: "Pregătire admitere Arhitectură",    href: "/#activitati",  desc: "Desen, perspectivă, compoziție și geometrie spațială." },
+    { name: "Centru de testare ICDL",            href: "/#icdl-centru", desc: "Sesiuni de testare și certificare ICDL într-un cadru autorizat." },
   ];
 
   const studioServices = [
-    { name: "Scanare 3D",      href: "/studio#scanare-3d",   desc: "Digitalizarea obiectelor fizice pentru reproducere, adaptare sau modelare." },
-    { name: "Modelare 3D",     href: "/studio#modelare-3d",  desc: "Design parametric pentru piese, obiecte și machete." },
-    { name: "Imprimare 3D",    href: "/studio#imprimare-3d", desc: "FDM și SLA cu filamente tehnice și materiale speciale." },
-    { name: "Prototipare",     href: "/studio#prototipare",  desc: "De la concept la prototip funcțional, rapid și iterativ." },
-    { name: "Proiecte custom", href: "/studio#custom",       desc: "Colaborăm cu persoane și organizații pe proiecte specifice." },
+    { name: "Scanare 3D",      href: "/#studio", desc: "Digitalizarea obiectelor fizice pentru reproducere, adaptare sau modelare." },
+    { name: "Modelare 3D",     href: "/#studio", desc: "Design parametric pentru piese, obiecte și machete." },
+    { name: "Imprimare 3D",    href: "/#studio", desc: "FDM și SLA cu filamente tehnice și materiale speciale." },
+    { name: "Prototipare",     href: "/#studio", desc: "De la concept la prototip funcțional, rapid și iterativ." },
+    { name: "Proiecte custom", href: "/#studio", desc: "Colaborăm cu persoane și organizații pe proiecte specifice." },
   ];
 
   const fontInter   = "'Inter', sans-serif";
@@ -70,63 +99,90 @@ export default function Header() {
 
   // ── Desktop dropdown panel ────────────────────────────────────────────────
   const DropdownPanel = ({
-    id, open, label, items, sectionLabel, onEnter, onLeave,
+    id, open, setOpen, label, items, sectionLabel, onEnter, onLeave,
   }: {
-    id: string; open: boolean; label: string; sectionLabel: string;
+    id: string; open: boolean; setOpen: React.Dispatch<React.SetStateAction<boolean>>; label: string; sectionLabel: string;
     items: { name: string; href: string; desc: string }[];
     onEnter: () => void; onLeave: () => void;
-  }) => (
-    <div className="relative" onMouseEnter={onEnter} onMouseLeave={onLeave}>
-      <button
-        id={`nav-${id}-btn`}
-        type="button"
-        className="flex items-center gap-1 text-sm font-medium transition-colors py-2 cursor-pointer"
-        style={{ fontFamily: fontInter, color: "#111111" }}
-        onMouseEnter={(e) => (e.currentTarget.style.color = "#B8A22A")}
-        onMouseLeave={(e) => (e.currentTarget.style.color = "#111111")}
-        aria-expanded={open}
-        aria-haspopup="true"
-        aria-controls={`nav-${id}-dropdown`}
-      >
-        <span>{label}</span>
-        <ChevronDown
-          className={`size-4 transition-transform duration-300 ${open ? "rotate-180 text-[#B8A22A]" : "text-[#4B5563]"}`}
-        />
-      </button>
+  }) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef<HTMLButtonElement>(null);
 
+    const handleBlur = (e: React.FocusEvent) => {
+      if (!containerRef.current?.contains(e.relatedTarget as Node)) {
+        setOpen(false);
+      }
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        buttonRef.current?.focus();
+      }
+    };
+
+    return (
       <div
-        id={`nav-${id}-dropdown`}
-        className={`absolute top-full -left-20 mt-1 w-80 rounded-xl p-4 shadow-xl transition-all duration-300 origin-top-left ${
-          open
-            ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
-            : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
-        }`}
-        style={{ background: "#FFFFFF", border: "1px solid #D9D6D1", boxShadow: "0 12px 40px rgba(0,0,0,0.08)", zIndex: 9000 }}
-        aria-hidden={!open}
+        ref={containerRef}
+        className="relative"
+        onMouseEnter={onEnter}
+        onMouseLeave={onLeave}
+        onBlur={handleBlur}
+        onKeyDown={handleKeyDown}
       >
-        <div className="w-full h-[2px] rounded-full mb-3" style={{ background: "linear-gradient(90deg, #B8A22A, rgba(184,162,42,0.1))" }} />
-        <div className="grid gap-1">
-          <div className="px-2 pb-2 text-[10px] font-semibold tracking-widest uppercase" style={{ color: "#8A8A8A", fontFamily: fontJakarta }}>
-            {sectionLabel}
+        <button
+          ref={buttonRef}
+          id={`nav-${id}-btn`}
+          type="button"
+          className="flex items-center gap-1 text-sm font-medium transition-colors py-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A22A] rounded"
+          style={{ fontFamily: fontInter, color: "#111111" }}
+          onClick={() => setOpen(v => !v)}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "#B8A22A")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "#111111")}
+          aria-expanded={open}
+          aria-haspopup="true"
+          aria-controls={`nav-${id}-dropdown`}
+        >
+          <span>{label}</span>
+          <ChevronDown
+            className={`size-4 transition-transform duration-300 ${open ? "rotate-180 text-[#B8A22A]" : "text-[#4B5563]"}`}
+          />
+        </button>
+
+        <div
+          id={`nav-${id}-dropdown`}
+          className={`absolute top-full -left-20 mt-1 w-80 rounded-xl p-4 shadow-xl transition-all duration-300 origin-top-left ${
+            open
+              ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+              : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+          }`}
+          style={{ background: "#FFFFFF", border: "1px solid #D9D6D1", boxShadow: "0 12px 40px rgba(0,0,0,0.08)", zIndex: 9000 }}
+          aria-hidden={!open}
+        >
+          <div className="w-full h-[2px] rounded-full mb-3" style={{ background: "linear-gradient(90deg, #B8A22A, rgba(184,162,42,0.1))" }} />
+          <div className="grid gap-1">
+            <div className="px-2 pb-2 text-[10px] font-semibold tracking-widest uppercase" style={{ color: "#8A8A8A", fontFamily: fontJakarta }}>
+              {sectionLabel}
+            </div>
+            {items.map((item, idx) => (
+              <a
+                key={idx}
+                href={item.href}
+                className="flex flex-col gap-0.5 rounded-lg p-2.5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A22A]"
+                style={{ color: "#111111" }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "#F4F4F4")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                onClick={() => { setIsCoursesOpen(false); setIsStudioOpen(false); }}
+              >
+                <span className="text-sm font-medium hover:text-[#B8A22A] transition-colors" style={{ color: "inherit", fontFamily: fontJakarta }}>{item.name}</span>
+                <span className="text-xs leading-normal" style={{ color: "#4B5563", fontFamily: fontInter }}>{item.desc}</span>
+              </a>
+            ))}
           </div>
-          {items.map((item, idx) => (
-            <a
-              key={idx}
-              href={item.href}
-              className="flex flex-col gap-0.5 rounded-lg p-2.5 transition-colors"
-              style={{ color: "#111111" }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "#F4F4F4")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
-              onClick={() => { setIsCoursesOpen(false); setIsStudioOpen(false); }}
-            >
-              <span className="text-sm font-medium hover:text-[#B8A22A] transition-colors" style={{ color: "inherit", fontFamily: fontJakarta }}>{item.name}</span>
-              <span className="text-xs leading-normal" style={{ color: "#4B5563", fontFamily: fontInter }}>{item.desc}</span>
-            </a>
-          ))}
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <>
@@ -168,6 +224,7 @@ export default function Header() {
             <DropdownPanel
               id="cursuri"
               open={isCoursesOpen}
+              setOpen={setIsCoursesOpen}
               label="Cursuri"
               sectionLabel="Programe educaționale"
               items={courses}
@@ -177,6 +234,7 @@ export default function Header() {
             <DropdownPanel
               id="studio"
               open={isStudioOpen}
+              setOpen={setIsStudioOpen}
               label="Studio 3D"
               sectionLabel="Servicii BlankSpace Studio 3D"
               items={studioServices}

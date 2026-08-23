@@ -122,6 +122,7 @@
                 type="checkbox"
                 id="cookie-toggle-external"
                 class="sr-only peer"
+                aria-label="Permite conținut extern (Google Maps)"
               />
               <div class="w-11 h-6 bg-[#D9D6D1] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[#B8A22A] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-[#D9D6D1] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#B8A22A]"></div>
             </div>
@@ -238,8 +239,11 @@
   }
 
   // ── MODAL CONTROLS ────────────────────────────────────────────────────────
+  let previousActiveElement: HTMLElement | null = null;
+
   function openModal() {
     if (!modal) return;
+    previousActiveElement = document.activeElement as HTMLElement | null;
     const current = getStoredPreferences();
     if (toggleExternal) {
       toggleExternal.checked = current ? current.externalContent : false;
@@ -252,6 +256,8 @@
       if (panel) {
         panel.classList.remove('scale-95');
         panel.classList.add('scale-100');
+        const firstFocusable = panel.querySelector<HTMLElement>('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        firstFocusable?.focus();
       }
     });
   }
@@ -267,6 +273,10 @@
     }
     setTimeout(() => {
       modal.style.display = 'none';
+      if (previousActiveElement) {
+        previousActiveElement.focus();
+        previousActiveElement = null;
+      }
     }, 300);
   }
 
@@ -335,10 +345,34 @@
     }
   }
 
-  // Keyboard accessibility: ESC key closes modal
+  // Keyboard accessibility: ESC key closes modal & Tab focus trap
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
-      closeModal();
+    if (modal && modal.style.display === 'flex') {
+      if (e.key === 'Escape') {
+        closeModal();
+        return;
+      }
+      if (e.key === 'Tab') {
+        const panel = document.getElementById('cookie-settings-panel');
+        if (!panel) return;
+        const focusables = Array.from(
+          panel.querySelectorAll<HTMLElement>('button:not([disabled]), [href], input:not([disabled]), [tabindex]:not([tabindex="-1"])')
+        );
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
     }
   });
 

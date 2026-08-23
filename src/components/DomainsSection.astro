@@ -4,9 +4,8 @@ const activities = [
     id: "design-interior",
     modalId: "modal-design-interior",
     title: "Curs Design Interior",
-    tagline: "curs design interior Brașov",
-    badge: "Curs autorizat · program de specializare",
-    desc: "Învață să analizezi spații, să elaborezi planuri de amenajare și să prezinți proiecte de design interior cu instrumente profesionale.",
+    badge: "Program în 2 module · specializare autorizată",
+    desc: "De la bazele designului și desenului tehnic până la proiectarea digitală și dezvoltarea unui proiect complet de amenajare.",
     chips: null,
     icon: `<svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>`
   },
@@ -14,7 +13,6 @@ const activities = [
     id: "imprimare-3d",
     modalId: "modal-imprimare-3d",
     title: "Curs Imprimare 3D",
-    tagline: "curs imprimare 3D Brașov",
     badge: null,
     desc: "Un curs practic pentru pasionați, începători și cei care vor să descopere imprimarea 3D, de la pregătirea modelului până la realizarea obiectului fizic. Posibilitate de certificare ICDL 3D Printing.",
     chips: null,
@@ -23,19 +21,17 @@ const activities = [
   {
     id: "icdl",
     modalId: "modal-icdl",
-    title: "Cursuri de competențe digitale ICDL",
-    tagline: "cursuri ICDL Brașov competențe digitale",
-    badge: null,
-    desc: "Dezvoltă competențe digitale practice pentru școală, studiu și activitatea profesională, cu posibilitatea certificării internaționale ICDL.",
-    chips: ["Documente / Word", "Calcul tabelar / Excel", "Prezentări / PowerPoint", "Utilizare Calculator & Navigare Online", "2D Design / CAD"],
-    chipsSecondary: "Certificări și profile: ICDL CORE \u00b7 PROFIL BAC \u00b7 PROFIL DIDACTIC \u00b7 Alte module",
+    title: "Cursuri și certificări ICDL",
+    badge: "Centru de Testare Acreditat ICDL",
+    desc: "Pregătire, simulări și examene pentru certificarea competențelor digitale. Urmează cursul complet sau mergi direct către testare dacă ai deja experiență.",
+    chips: null,
+    chipsSecondary: null,
     icon: `<svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>`
   },
   {
     id: "arhitectura",
     modalId: "modal-arhitectura",
     title: "Pregătire admitere Arhitectură",
-    tagline: "pregătire admitere arhitectură Brașov curs desen arhitectură",
     badge: null,
     desc: "Pregătire practică pentru liceeni și viitori candidați la facultățile de arhitectură, cu exerciții de desen, perspectivă, compoziție, volumetrie și geometrie, dezvoltarea gândirii spațiale și pregătirea portofoliului.",
     chips: null,
@@ -95,9 +91,6 @@ const activities = [
             <h3 class="heading-3 mb-2 transition-colors duration-200 group-hover:text-[#B8A22A]" style="color: #111111;">
               {act.title}
             </h3>
-
-            {/* Hidden SEO tagline */}
-            <p class="sr-only">{act.tagline}</p>
 
             <p class="text-sm leading-relaxed body-text" style="color: #4B5563;">
               {act.desc}
