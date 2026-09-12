@@ -1,5 +1,16 @@
 ---
-const activities = [
+interface Activity {
+  id: string;
+  modalId: string;
+  title: string;
+  badge: string | null;
+  desc: string;
+  chips?: string[] | null;
+  chipsSecondary?: string | null;
+  icon: string;
+}
+
+const activities: Activity[] = [
   {
     id: "design-interior",
     modalId: "modal-design-interior",
