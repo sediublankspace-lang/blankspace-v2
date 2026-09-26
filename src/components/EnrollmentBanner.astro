@@ -1,0 +1,272 @@
+---
+// EnrollmentBanner — bloc compact de înscrieri, montat în Hero.astro
+// înlocuiește fostul Live Badge „Sesiunea de toamnă 2026 · Înscrierea este deschisă"
+// Modalul Design Interior se deschide prin event delegation existent în CourseModals.astro —
+// nu se adaugă niciun event listener nou.
+---
+
+<div
+  id="enrollment-banner"
+  class="enb"
+  role="region"
+  aria-label="Înscrieri deschise"
+>
+
+  <!-- Etichetă -->
+  <div class="enb__label">
+    <span class="enb__dot" aria-hidden="true"></span>
+    <span>ÎNSCRIERI DESCHISE</span>
+  </div>
+
+  <!-- Butoane -->
+  <div class="enb__actions">
+
+    <!-- Buton principal: Curs Design Interior -->
+    <button
+      type="button"
+      id="enb-btn-design-interior"
+      data-open-modal="modal-design-interior"
+      class="enb__btn enb__btn--primary"
+      aria-label="Curs Design Interior – deschide detalii și înscriere"
+    >
+      <span class="enb__btn-content">
+        <span class="enb__btn-title">Curs Design Interior</span>
+        <span class="enb__btn-date">17 octombrie 2026</span>
+      </span>
+      <svg
+        viewBox="0 0 16 16"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="enb__icon-arrow"
+        aria-hidden="true"
+      >
+        <path d="M3 8h10M9 4l4 4-4 4" />
+      </svg>
+    </button>
+
+    <!-- Buton secundar: Curs GIS pe Facebook -->
+    <a
+      href="https://www.facebook.com/sediu.BlankSpace/posts/pfbid02GvT2MqTozsAaYhuzdpzniTVyAKmGvvbSyHiHTo9T9FuBhv9iVC2GDpgHAEzbLkLRl"
+      target="_blank"
+      rel="noopener noreferrer"
+      id="enb-btn-gis"
+      class="enb__btn enb__btn--secondary"
+      aria-label="Curs GIS, 24–25 octombrie 2026 – deschide postarea pe Facebook într-o filă nouă"
+    >
+      <!-- Icoană Facebook -->
+      <svg
+        viewBox="0 0 24 24"
+        class="enb__icon-fb"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path
+          fill="currentColor"
+          d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+        />
+      </svg>
+      <span class="enb__btn-content">
+        <span class="enb__btn-title">Curs GIS</span>
+        <span class="enb__btn-date">24–25 octombrie 2026</span>
+      </span>
+      <!-- Indicator extern discret -->
+      <svg
+        viewBox="0 0 16 16"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="enb__icon-ext"
+        aria-hidden="true"
+      >
+        <path d="M4.5 11.5l7-7M6 4.5h5.5V10" />
+      </svg>
+    </a>
+
+  </div>
+</div>
+
+<style>
+  /* ── Container ── */
+  .enb {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.8rem;           /* 12.8px — era 0.6rem (9.6px) */
+    padding: 1.0625rem 1.0625rem; /* 17px — era 0.85rem×1rem (13.6×16px) */
+    border-radius: 0.875rem;
+    width: min(100%, 630px); /* +~20% față de lățimea implicită anterioară */
+    max-width: 100%;
+    box-sizing: border-box;
+    background: rgba(17, 17, 17, 0.72);
+    border: 1px solid rgba(184, 162, 42, 0.22);
+    backdrop-filter: blur(6px);
+  }
+
+  /* ── Etichetă ── */
+  .enb__label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8125rem;  /* 13px — era 0.62rem (9.9px) */
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #B8A22A;
+    line-height: 1;
+  }
+
+  .enb__dot {
+    display: inline-block;
+    width: 0.5rem;         /* 8px — era 0.42rem (6.7px) */
+    height: 0.5rem;
+    border-radius: 50%;
+    background: #B8A22A;
+    flex-shrink: 0;
+  }
+
+  /* ── Acțiuni ── */
+  .enb__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;          /* 8.8px — era 0.45rem (7.2px) */
+    align-items: stretch;
+  }
+
+  /* ── Buton comun ── */
+  .enb__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;          /* 10.4px — era 0.5rem (8px) */
+    padding: 0.75rem 1.25rem; /* 12px 20px — era 0.45rem 0.85rem (7.2px 13.6px) */
+    border-radius: 0.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    min-height: 4.25rem;   /* 68px — era 2.75rem (44px) */
+    border: none;
+    outline: none;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
+  .enb__btn:focus-visible {
+    outline: 2px solid #B8A22A;
+    outline-offset: 2px;
+  }
+
+  /* Buton principal — auriu, text închis */
+  .enb__btn--primary {
+    background: #B8A22A;
+    color: #111111;
+    box-shadow: 0 2px 10px rgba(184, 162, 42, 0.25);
+    flex: 1 1 auto;        /* poate fi puțin mai lat decât GIS */
+  }
+
+  .enb__btn--primary:hover {
+    opacity: 0.88;
+    box-shadow: 0 4px 16px rgba(184, 162, 42, 0.38);
+  }
+
+  .enb__btn--primary:active {
+    opacity: 0.78;
+    transform: scale(0.98);
+  }
+
+  /* Buton secundar — închis, bordură albă discretă */
+  .enb__btn--secondary {
+    background: rgba(255, 255, 255, 0.06);
+    color: #D9D6D1;
+    border: 1px solid rgba(217, 214, 209, 0.22);
+    flex: 0 1 auto;
+  }
+
+  .enb__btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(217, 214, 209, 0.40);
+    color: #F4F4F4;
+  }
+
+  .enb__btn--secondary:active {
+    opacity: 0.80;
+    transform: scale(0.98);
+  }
+
+  /* ── Conținut butoane ── */
+  .enb__btn-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;          /* 4px — era 0.1rem (1.6px) */
+    text-align: left;
+  }
+
+  .enb__btn-title {
+    font-size: 1.0625rem;  /* 17px — era 0.8rem (12.8px) */
+    font-weight: 700;      /* era 600 */
+    line-height: 1.25;     /* era 1.2 */
+  }
+
+  .enb__btn-date {
+    font-size: 0.8125rem;  /* 13px — era 0.67rem (10.7px) */
+    font-weight: 400;
+    opacity: 0.72;
+    line-height: 1.3;      /* era 1.1 */
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* ── Iconițe ── */
+  .enb__icon-arrow {
+    width: 1.0625rem;      /* 17px — era 0.85rem (13.6px) */
+    height: 1.0625rem;
+    flex-shrink: 0;
+  }
+
+  .enb__icon-fb {
+    width: 1.125rem;       /* 18px — era 0.9rem (14.4px) */
+    height: 1.125rem;
+    flex-shrink: 0;
+    opacity: 0.70;
+  }
+
+  .enb__icon-ext {
+    width: 0.875rem;       /* 14px — era 0.72rem (11.5px) */
+    height: 0.875rem;
+    flex-shrink: 0;
+    opacity: 0.55;
+    margin-left: auto;
+  }
+
+  /* ── Mobil: butoane stivuite (sub 640px) ── */
+  @media (max-width: 639px) {
+    .enb {
+      display: flex;
+      width: 100%;         /* lățime completă pe mobil */
+    }
+
+    .enb__actions {
+      flex-direction: column;
+    }
+
+    .enb__btn {
+      width: 100%;
+      white-space: normal;
+      flex: none;
+      min-height: 3.25rem; /* 52px — touch target pe mobil */
+    }
+
+    .enb__btn--primary {
+      flex: none;
+    }
+
+    .enb__icon-ext {
+      margin-left: 0;
+    }
+  }
+</style>

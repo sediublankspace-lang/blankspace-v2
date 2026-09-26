@@ -1,4 +1,5 @@
 ---
+import EnrollmentBanner from './EnrollmentBanner.astro';
 ---
 
 <section
@@ -21,14 +22,8 @@
       {/* ── Left Column — Text Content ── */}
       <div class="space-y-8">
 
-        {/* Live Badge */}
-        <div class="animate-fade-in-up inline-flex items-center gap-2.5 rounded-full px-4 py-1.5"
-             style="border: 1px solid rgba(184,162,42,0.25); background: rgba(184,162,42,0.07);">
-          <span class="size-1.5 rounded-full animate-pulse" style="background:#B8A22A;"></span>
-          <span class="text-xs font-semibold tracking-[0.12em] uppercase" style="color: #B8A22A; font-family: 'Plus Jakarta Sans', sans-serif;">
-            Sesiunea de toamnă 2026 · Înscrierea este deschisă
-          </span>
-        </div>
+        {/* Enrollment Banner — înlocuiește fostul Live Badge */}
+        <EnrollmentBanner />
 
         {/* Main Headline — H1 unic pe pagină */}
         <div class="animate-fade-in-up delay-100 space-y-3">
